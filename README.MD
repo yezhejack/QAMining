@@ -8,3 +8,5 @@ the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py
 * GoodQA.dat                                            tide version of GoodQA.txt without blank line
 * subtitles.dat                                         the file produced from subtitles preprocess procedure
 * /Subtitles                                            put the srt format subtitles
+
+#### create a file named 'ltp.key' contained key of ltp-cloud ####

@@ -1,3 +1,4 @@
 *.pyc
 *.xlsx
 .DS_Store
+*.key
