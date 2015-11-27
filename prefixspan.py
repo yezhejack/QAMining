@@ -3,6 +3,7 @@
 
 from collections import defaultdict
 
+#an example of db
 #db= [
 #    ['a','b','c','d','e'],
 #    ['b','b','b','d','e'],
@@ -36,5 +37,21 @@ def prefixspan(db,minsup):
                 mine_rec(newpatt, newmdb)
 
     mine_rec([], [(i, 0) for i in xrange(len(db))])
+    return results
 
-    print(results)
+#to check the sequence is matched or not
+#this function will check that if sen1 containes a pattern, sen2
+#PS:the order of pattern won't be ignored
+def ismatched(sen1,sen2):
+    i=0
+    for tag2 in sen2:
+        flag=False
+        while i<len(sen1):
+            tag1=sen1[i]
+            i+=1
+            if tag1==tag2:
+                flag=True
+                break
+        if flag==False:
+            return False
+    return True
