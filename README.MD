@@ -9,6 +9,7 @@ the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py
 * subtitles.dat                                         the file produced from subtitles preprocess procedure
 * /Subtitles                                            put the srt format subtitles
 * ltpprocess.py                                         provide interface to call ltp-cloud
+
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
 
