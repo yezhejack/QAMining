@@ -10,3 +10,8 @@ the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py
 * /Subtitles                                            put the srt format subtitles
 * ltpprocess.py                                         provide interface to call ltp-cloud
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
+#### hardcode problem ####
+1. ltp mode
+2. minsup
+3. patterns minimal length
+4. url

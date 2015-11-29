@@ -24,16 +24,12 @@ if __name__=='__main__':
     key_file=open(current_path+'ltp.key','r')
     key=key_file.readline()
     key_file.close()
-    input_file=open(current_path+'test_GoodQA.dat','r')
+    input_file=open(current_path+'GoodQA.dat','r')
     sentence=input_file.readline()
     while sentence!='':
         sen_db.append(sentence)
-        result=json.loads(tagsentence(sentence,key))[0][0]
-        seq=[]
-        for i in range(len(result)):
-            seq.append(result[i]['pos']+'-'+result[i]['relate'])
-        tagged_sen.append(seq)
-        print seq
+        tagged_sen.append(tagsentence(sentence,key,['pos','relate'],'local'))
+        print tagged_sen[-1]
         sentence=input_file.readline()
     input_file.close()
     print tagged_sen
@@ -42,7 +38,7 @@ if __name__=='__main__':
     print '***************************************'
     print 'Begin to mine patterns'
     patterns=[]
-    for (pat,index) in prefixspan(tagged_sen,3):
+    for (pat,index) in prefixspan(tagged_sen,5):
         if len(pat)>=3:
             patterns.append(pat)
     print patterns
@@ -54,17 +50,12 @@ if __name__=='__main__':
     key_file=open(current_path+'ltp.key','r')
     key=key_file.readline()
     key_file.close()
-    input_file=open(current_path+'test_subtitle.dat','r')
+    input_file=open(current_path+'subtitle.dat','r')
     sentence=input_file.readline()
     while sentence!='':
         sen_db_tomine.append(sentence)
-        print sentence
-        print key
-        result=json.loads(tagsentence(sentence,key))[0][0]
-        seq=[]
-        for i in range(len(result)):
-            seq.append(result[i]['pos']+'-'+result[i]['relate'])
-        tagged_sen_tomine.append(seq)
+        tagged_sen_tomine.append(tagsentence(sentence,key,['pos','relate'],'local'))
+        print tagged_sen_tomine[-1]
         sentence=input_file.readline()
     input_file.close()
     print tagged_sen_tomine
