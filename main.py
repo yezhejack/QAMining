@@ -4,8 +4,20 @@ from SubPreprocess import *
 from ltpprocess import *
 from prefixspan import *
 import json
-
+import argparse
+current_path=''
 if __name__=='__main__':
+    current_path=os.getcwd()
+    #arguments parser
+    parser=argparse.ArgumentParser()
+    parser.add_argument("-m","--mode",help="\'local\' for the local ltp_server, \'remote\' for the ltp_cloud",default='remote')
+    parser.add_argument("--workingpath",help="the path of data: ltp.key GoodQA.dat subtitle.dat,default = current path",default=current_path)
+    parser.add_argument("--keypath",help="the path of key file default = current_path/ltp.key",default=current_path+'/ltp.key')
+    parser.add_argument("--goodqapath",help="the path of Good QA file, default = current_path/GoodQA.dat",default=current_path+'/GoodQA.dat')
+    parser.add_argument("--tominepath",help="the path of file to mine, default = current_path/subtitle.dat",default=current_path+'/subtitle.dat')
+    parser.add_argument("--minsup",type=int,help="the minimal support of the patterns, default=3",default=3)
+    parser.add_argument("--minlen",type=int,help="the minimal length of any pattern, default=3",default=3)
+    args=parser.parse_args()
 
     #pre-process subtitles
     #path='/Users/JackYip/Workspace/QA_Mining/Subtitles/'
@@ -21,14 +33,16 @@ if __name__=='__main__':
     sen_db=[]
     sen_db_tomine=[]
     tagged_sen=[]
-    key_file=open(current_path+'ltp.key','r')
-    key=key_file.readline()
-    key_file.close()
-    input_file=open(current_path+'GoodQA.dat','r')
+    key=''
+    if args.mode=='remote':
+        key_file=open(args.keypath,'r')
+        key=key_file.readline()
+        key_file.close()
+    input_file=open(args.goodqapath,'r')
     sentence=input_file.readline()
     while sentence!='':
         sen_db.append(sentence)
-        tagged_sen.append(tagsentence(sentence,key,['pos','relate'],'local'))
+        tagged_sen.append(tagsentence(sentence,key,['pos','relate'],args.mode))
         print tagged_sen[-1]
         sentence=input_file.readline()
     input_file.close()
@@ -38,8 +52,8 @@ if __name__=='__main__':
     print '***************************************'
     print 'Begin to mine patterns'
     patterns=[]
-    for (pat,index) in prefixspan(tagged_sen,5):
-        if len(pat)>=3:
+    for (pat,index) in prefixspan(tagged_sen,args.minsup):
+        if len(pat)>=args.minlen:
             patterns.append(pat)
     print patterns
 
@@ -47,14 +61,15 @@ if __name__=='__main__':
     print '***************************************'
     print 'tag on the subtitles to mine'
     tagged_sen_tomine=[]
-    key_file=open(current_path+'ltp.key','r')
-    key=key_file.readline()
-    key_file.close()
-    input_file=open(current_path+'subtitle.dat','r')
+    if args.mode=='remote':
+        key_file=open(args.keypath,'r')
+        key=key_file.readline()
+        key_file.close()
+    input_file=open(args.tominepath,'r')
     sentence=input_file.readline()
     while sentence!='':
         sen_db_tomine.append(sentence)
-        tagged_sen_tomine.append(tagsentence(sentence,key,['pos','relate'],'local'))
+        tagged_sen_tomine.append(tagsentence(sentence,key,['pos','relate'],args.mode))
         print tagged_sen_tomine[-1]
         sentence=input_file.readline()
     input_file.close()

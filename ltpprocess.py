@@ -4,7 +4,6 @@ import urllib2,urllib
 import json
 import xml.etree.ElementTree as ET
 
-current_path='/Users/JackYip/Workspace/QA_Mining/'
 #return list
 #attri:a list of 'pos' 'id' 'relate' 'ne'
 #mode: 'local' stands for calling the ltp_server of local host
@@ -45,7 +44,6 @@ def tagsentence(text,api_key,attri,mode):
                 tree=ET.fromstring(content)
                 flag=True
             except BaseException:
-                print content
                 flag=False
         seq=[]
         for word in tree.iter('word'):
