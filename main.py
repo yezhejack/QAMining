@@ -17,6 +17,7 @@ if __name__=='__main__':
     parser.add_argument("--tominepath",help="the path of file to mine, default = current_path/subtitle.dat",default=current_path+'/subtitle.dat')
     parser.add_argument("--minsup",type=int,help="the minimal support of the patterns, default=3",default=3)
     parser.add_argument("--minlen",type=int,help="the minimal length of any pattern, default=3",default=3)
+    parser.add_argument("--outputpath",help="the path of file to store final result,default=dialogue.txt",default="dialogue.txt")
     args=parser.parse_args()
 
     #pre-process subtitles
@@ -76,12 +77,18 @@ if __name__=='__main__':
     print tagged_sen_tomine
 
     mine_result=[]
+    result_file=open(args.outputpath,'w')
     for i in range(len(tagged_sen_tomine)):
         for sen2 in patterns:
             sen1=tagged_sen_tomine[i]
             if ismatched(sen1,sen2)==True:
                 print sen_db_tomine[i]
+                if i+1<len(tagged_sen_tomine):
+                    result_file.write(sen_db_tomine[i])
+                    result_file.write(sen_db_tomine[i+1])
+                    result_file.write('***********************************************\n')
                 print sen1
                 print sen2
                 mine_result.append(sen_db_tomine[i])
                 break
+    result_file.close()
