@@ -11,19 +11,19 @@ if __name__=='__main__':
     #arguments parser
     parser=argparse.ArgumentParser()
     parser.add_argument("-m","--mode",help="\'local\' for the local ltp_server, \'remote\' for the ltp_cloud",default='remote')
-    parser.add_argument("--workingpath",help="the path of data: ltp.key GoodQA.dat subtitle.dat,default = current path",default=current_path)
-    parser.add_argument("--keypath",help="the path of key file default = current_path/ltp.key",default=current_path+'/ltp.key')
-    parser.add_argument("--goodqapath",help="the path of Good QA file, default = current_path/GoodQA.dat",default=current_path+'/GoodQA.dat')
-    parser.add_argument("--tominepath",help="the path of file to mine, default = current_path/subtitle.dat",default=current_path+'/subtitle.dat')
+    parser.add_argument("--workingpath",help="the path of data: ltp.key GoodQA.dat subtitle.dat,default = current path",default=current_path+'/data')
+    parser.add_argument("--keypath",help="the path of key file default = current_path/ltp.key",default=current_path+'/data/ltp.key')
+    parser.add_argument("--goodqapath",help="the path of Good QA file, default = current_path/GoodQA.dat",default=current_path+'/data/GoodQA.dat')
+    parser.add_argument("--tominepath",help="the path of file to mine, default = current_path/subtitle.dat",default=current_path+'/data/subtitle.dat')
     parser.add_argument("--minsup",type=int,help="the minimal support of the patterns, default=3",default=3)
     parser.add_argument("--minlen",type=int,help="the minimal length of any pattern, default=3",default=3)
-    parser.add_argument("--outputpath",help="the path of file to store final result,default=dialogue.txt",default="dialogue.txt")
+    parser.add_argument("--outputpath",help="the path of file to store final result,default=data/result/dialogue.txt",default="data/result/dialogue.txt")
     args=parser.parse_args()
 
     #pre-process subtitles
-    #path='/Users/JackYip/Workspace/QA_Mining/Subtitles/'
+    #path='/Users/JackYip/Workspace/QA_Mining/data/Subtitles/'
     #result=CleanSubFiles(path)
-    #f=open('/Users/JackYip/Workspace/QA_Mining/subtitle.dat','w')
+    #f=open('/Users/JackYip/Workspace/QA_Mining/data/subtitle.dat','w')
     #for line in result:
     #    f.write(line)
     #f.close()

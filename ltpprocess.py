@@ -1,8 +1,12 @@
 #coding:utf-8
 #this code provide the interface to use ltp-cloud platform from SCIR
+#and provide independent script for calling ltp
 import urllib2,urllib
 import json
 import xml.etree.ElementTree as ET
+import argparse
+import os
+import json
 
 #return list
 #attri:a list of 'pos' 'id' 'relate' 'ne'
@@ -57,3 +61,42 @@ def tagsentence(text,api_key,attri,mode):
         return seq
     return []
 
+#provide file io for tagging sentence
+#the inputfile must be in the data/
+#the outputfile will be in the data/
+def tagger(input,output,tags,mode,keypath):
+    current_path=os.getcwd()
+
+    key=''
+    if mode=='remote':
+        key_file=open(current_path+'/data/'+keypath,'r')
+        key=key_file.readline()
+        key_file.close()
+
+    sen_db=[]
+    tagged_sen_db=[]
+    input_file=open(current_path+'/data/'+input,'r')
+    sentence=input_file.readline()
+    while sentence!='':
+        sen_db.append(sentence)
+        tagged_sen_db.append(tagsentence(sentence,key,['pos','relate'],mode))
+        print tagged_sen_db[-1]
+        sentence=input_file.readline()
+    input_file.close()
+    print tagged_sen_db
+
+    output_file=open(current_path+'/data/'+output,'w')
+    output_file.write(json.dumps(sen_db)+'\n')
+    output_file.write(json.dumps(tagged_sen_db))
+    output_file.close()
+
+if __name__=="__main__":
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--input',help='the name of input file in ./data/,default=ltpprocess_input.dat',default='ltpprocess_input.dat')
+    parser.add_argument('--output',help='the name of output file in ./data/,default=ltpprocess_output.dat',default='ltpprocess_output.dat')
+    parser.add_argument('--tags',nargs='+',help='the tags,default=[pos,relate]',default=['pos','relate'])
+    parser.add_argument('--mode',help='the mode of ltp_server,default=local',default='local')
+    parser.add_argument('--keypath',help='the key file of ltp_cloud,default=ltp.key',default='ltp.key')
+    args=parser.parse_args()
+
+    tagger(args.input,args.output,args.tags,args.mode,args.keypath)
