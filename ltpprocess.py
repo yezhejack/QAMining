@@ -91,6 +91,7 @@ def tagger(input,output,tags,mode,keypath):
     output_file.close()
 
 if __name__=="__main__":
+    #parse the arguments
     parser=argparse.ArgumentParser()
     parser.add_argument('--input',help='the name of input file in ./data/,default=ltpprocess_input.dat',default='ltpprocess_input.dat')
     parser.add_argument('--output',help='the name of output file in ./data/,default=ltpprocess_output.dat',default='ltpprocess_output.dat')
