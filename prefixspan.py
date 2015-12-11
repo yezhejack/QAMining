@@ -66,7 +66,7 @@ def mine_patterns(input,output,minsup,minlen):
 if __name__=='__main__':
     #parse the arguments
     parser=argparse.ArgumentParser()
-    parser.add_argument("--input",help="the input file name,default=ltpprocess_output.dat",default='ltpprocess_output.dat')
+    parser.add_argument("--input",help="the input file name,default=tagged_GoodQA.dat",default='tagged_GoodQA.dat')
     parser.add_argument("--output",help="the output file name ,default=patterns.dat",default='patterns.dat')
     parser.add_argument("--minsup",type=int,help="the minimal support for mining,default=3",default=3)
     parser.add_argument("--minlen",type=int,help="the minimal length for mining patterns,default=0",default=0)
