@@ -45,19 +45,20 @@ def prefixspan(db,minsup):
 
 
 def mine_patterns(input,output,minsup,minlen):
-    str=''
+    tmp_str=''
     current_path=os.getcwd()
     f=open(current_path+'/data/'+input,'r')
-    str=f.readline()
-    sen_db=json.loads(str)
-    str=f.readline()
-    tagged_sen_db=json.loads(str)
+    tmp_str=f.readline()
+    sen_db=json.loads(tmp_str)
+    tmp_str=f.readline()
+    tagged_sen_db=json.loads(tmp_str)
     f.close()
 
     patterns=[]
     for (pat,index) in prefixspan(tagged_sen_db,minsup):
         if len(pat)>=minlen:
             patterns.append(pat)
+    print 'There are '+str(len(patterns))+' have been found.'
     f=open(current_path+'/data/'+output,'w')
     f.write(json.dumps(patterns))
     f.close()

@@ -31,16 +31,16 @@ def find(tagged_sen_file,patterns_file,output):
 
     #read sentences and tagged sentences
     f=open(current_path+'/data/'+tagged_sen_file,'r')
-    str=f.readline()
-    sen_db_tomine=json.loads(str)
-    str=f.readline()
-    tagged_sen_tomine=json.loads(str)
+    tmp_str=f.readline()
+    sen_db_tomine=json.loads(tmp_str)
+    tmp_str=f.readline()
+    tagged_sen_tomine=json.loads(tmp_str)
     f.close()
 
     #read patterns from disk
     f=open(current_path+'/data/'+patterns_file,'r')
-    str=f.readline()
-    patterns=json.loads(str)
+    tmp_str=f.readline()
+    patterns=json.loads(tmp_str)
     f.close()
 
     mine_result=[]
@@ -49,16 +49,11 @@ def find(tagged_sen_file,patterns_file,output):
         for sen2 in patterns:
             sen1=tagged_sen_tomine[i]
             if ismatched(sen1,sen2)==True:
-                print sen_db_tomine[i]
+                print sen_db_tomine[i].strip()
                 if i+1<len(tagged_sen_tomine):
-                    print i
-                    str=sen_db_tomine[i].strip()
-                    print str
-                    result_file.write(str)
-                    str=sen_db_tomine[i+1].strip()
-                    print str
-                    result_file.write(str)
-                    print '***********************************************'
+                    result_file.write(str(i)+'\n')
+                    result_file.write(sen_db_tomine[i].strip()+'\n')
+                    result_file.write(sen_db_tomine[i+1].strip()+'\n')
                     result_file.write('***********************************************\n')
                 print sen1
                 print sen2
