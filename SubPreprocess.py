@@ -1,5 +1,5 @@
 #coding:utf-8
-#Read subtitles with '.srt' . And change the format of the file and 
+#Read subtitles with '.srt' . And change the format of the file and
 #leave the subtitle only with the content in a new file
 #Date:2015.11.22
 #By YE Zhe
@@ -16,7 +16,7 @@ def CleanSubFiles(p):
             print f
             if os.path.splitext(f)[1]=='.srt':
                 srt_files_path.append(os.path.join(root,f))
-    
+
     for f in srt_files_path:
         print f
         input_f=open(f)
@@ -28,7 +28,7 @@ def CleanSubFiles(p):
                 print line
                 result.append(line)
             line=input_f.readline()
-        input_f.close()   
+        input_f.close()
     return result
 
 def ConvertToUTF8(str):
@@ -42,3 +42,31 @@ def ConvertToUTF8(str):
         finally:
             result=result.encode('UTF-8')
     return result
+
+# in some cases, a srt file would put two sentence in a line
+# this function is used to split it
+# example
+# input_file
+# - Hello Genius   - Hello World
+# output_file
+# Hello Genius
+# Hello World
+def SplitSenInALine(input_path,output_path):
+    input_file=open(input_path,'r')
+    output_file=open(output_path,'w')
+    tmp_str=input_file.readline()
+    while tmp_str!='':
+        if '-' in tmp_str:
+            split_str=tmp_str.split('-')
+            print tmp_str
+            print split_str
+            if len(split_str)>2:
+                for i in range(1,len(split_str)):
+                    output_file.write(split_str[i].strip()+'\n')
+            else:
+                output_file.write(tmp_str.strip()+'\n')
+        else:
+            output_file.write(tmp_str.strip()+'\n')
+        tmp_str=input_file.readline()
+    input_file.close()
+    output_file.close()
