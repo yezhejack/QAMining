@@ -1,6 +1,9 @@
 ### Mining Question-Answer pairs from texts and subtitles ###
 the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
 
+#### simple version ####
+this version only use simple strategy to match patterns
+
 #### directory and file explain ####
 * main.py                                               the main body of the system
 * prefixspan.py                                         prefixspan module
