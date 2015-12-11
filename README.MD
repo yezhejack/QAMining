@@ -32,16 +32,17 @@ Instead of running main.py, we can call the python script one by one to mine dia
 1. A plain subtitles file is needed. Every line is a sentence. It is named after 'subtitle.dat'
 2. A positive example is needed. This file  is named after 'GoodQA.dat' which contains the first sentences of all good Question-Answer pairs.
 3. Using ltpprocess.py to tag 'subtitle.dat' and 'GoodQA.dat'
-```
-python ltpprocess --input subtitle.dat  --output tagged_subtitle.dat
-python lttprocess --input GoodQA.dat    --output tagged_GoodQA.dat
-```
-The two files, tagged_subtitle.dat and tagged_GoodQA.dat, have two lines, first line is a json string of original sentences and the second line is the tags of original sentences in same order.
+  ```
+  python ltpprocess --input subtitle.dat  --output tagged_subtitle.dat
+  python lttprocess --input GoodQA.dat    --output tagged_GoodQA.dat
+  ```
+  The two files, tagged_subtitle.dat and tagged_GoodQA.dat, have two lines, first line is a json string of original sentences and the second line is the tags of original sentences in same order.
+
 4. Using prefixspan.py to mine the sequence patterns from tagged_GoodQA.dat
-```
-python prefixspan --minsup 30 --minlen 10 --input tagged_GoodQA.dat --output patterns.dat
-```
+  ```
+  python prefixspan --minsup 30 --minlen 10 --input tagged_GoodQA.dat --output patterns.dat
+  ```
 5. Using find_dialogue.py to find the sentence matched with any pattern of 'patterns.dat'
-```
-python find_dialogue -o dialogues_minsup30_minlen_10.txt
-```
+  ```
+  python find_dialogue -o dialogues_minsup30_minlen_10.txt
+  ```
