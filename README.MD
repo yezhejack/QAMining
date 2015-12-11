@@ -36,7 +36,8 @@ Instead of running main.py, we can call the python script one by one to mine dia
 python ltpprocess --input subtitle.dat  --output tagged_subtitle.dat
 python lttprocess --input GoodQA.dat    --output tagged_GoodQA.dat
 ```
-The two files, tagged_subtitle.dat and tagged_GoodQA.dat, have two lines, first line is a json string of original sentences and the second line is the tags of original sentences in same order.
+  The two files, tagged_subtitle.dat and tagged_GoodQA.dat, have two lines, first line is a json string of original sentences and the second line is the tags of original sentences in same order.
+
 4. Using prefixspan.py to mine the sequence patterns from tagged_GoodQA.dat
 ```
 python prefixspan --minsup 30 --minlen 10 --input tagged_GoodQA.dat --output patterns.dat
