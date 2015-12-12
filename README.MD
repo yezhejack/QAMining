@@ -49,3 +49,15 @@ Instead of running main.py, we can call the python script one by one to mine dia
   ```
   python find_dialogue -o dialogues_minsup30_minlen_10.txt
   ```
+
+#### modules features ####
+##### prefixspan #####
+minsup can be the absolute format or the percentage format. For example, if you want to mine the patterns have a minimal support value 20.
+```
+python prefixspan.py --minsup 20
+```
+If you want it to be 20%.
+```
+python prefixspan.py --minsup 20 --ispercent
+```
+The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value. 
