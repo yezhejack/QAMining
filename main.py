@@ -18,7 +18,7 @@ if __name__=='__main__':
     parser.add_argument("--minsup",type=float,help="the minimal support of the patterns, default=3",default=3)
     parser.add_argument("--ispercent",help="indict the minsup value is percentage",action='store_true')
     parser.add_argument("--minlen",type=int,help="the minimal length of any pattern, default=3",default=3)
-    parser.add_argument("--outputpath",help="the path of file to store final result,default=data/result/dialogue.txt",default="data/result/dialogue.txt")
+    parser.add_argument("--outputpath",help="the path of file to store final result,default=data/dialogues.txt",default="data/dialogues.txt")
     args=parser.parse_args()
 
     #pre-process subtitles

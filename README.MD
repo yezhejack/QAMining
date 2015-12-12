@@ -5,16 +5,31 @@ the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py
 this version only use simple strategy to match patterns
 
 #### directory and file explain ####
-* main.py                                               the main body of the system
-* prefixspan.py                                         prefixspan module
-* SubPreprocess.py                                      process the subtitles
-* subtitles.dat                                         the file produced from subtitles preprocess procedure
-* ltpprocess.py                                         provide interface to call ltp-cloud
-* find_dialogue.py                                      provide interface to find the dialogue matched a pattern
-* /data                                                 contains the data used in the project
-    * GoodQA.dat                                        the good question-answer pairs
-    * ltp.key                                           contains the remote ltp-cloud key
-    * /Subtitles                                        put the srt format subtitles
+* __main.py__
+  * the main body of the system
+* __prefixspan.py__
+  * prefixspan module
+* __SubPreprocess.py__
+  * process the subtitles
+* __subtitles.dat__
+  * the file produced from subtitles preprocess procedure
+* __ltpprocess.py__
+  * provide interface to call ltp-cloud
+* __find_dialogue.py__
+  * provide interface to find the dialogue matched a pattern
+* __tagdata.py__
+  * it's helpful tool to tag the data for training or evaluation
+* _/data_
+  * contains the data used in the project
+    * __GoodQA.dat__
+      * the good question-answer pairs
+    * __ltp.key__
+      * contains the remote ltp-cloud key
+    * __/Subtitles__
+      * put the srt format subtitles
+    * __subtitle.dat__
+      * the good format subtitle
+
 
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
@@ -60,4 +75,7 @@ If you want it to be 20%.
 ```
 python prefixspan.py --minsup 20 --ispercent
 ```
-The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value. 
+The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value.
+
+##### tagdata #####
+It will help me to tag the data by hand and it can be recover from last place. 
