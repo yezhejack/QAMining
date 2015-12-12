@@ -44,7 +44,7 @@ def prefixspan(db,minsup):
 
 
 
-def mine_patterns(input,output,minsup,minlen):
+def mine_patterns(input,output,minsup,ispercent,minlen):
     tmp_str=''
     current_path=os.getcwd()
     f=open(current_path+'/data/'+input,'r')
@@ -54,11 +54,24 @@ def mine_patterns(input,output,minsup,minlen):
     tagged_sen_db=json.loads(tmp_str)
     f.close()
 
+    #get the absolute minsup
+    absolute_minsup=1
+    if ispercent==True:
+        absolute_minsup=int(minsup*len(sen_db)/100)
+    else:
+        absolute_minsup=int(minsup)
+
+    #check minimal support value
+    if absolute_minsup<=0 or absolute_minsup>len(sen_db):
+        print '[Error]The minsup is out of legal range!'
+        return
+
+    #begin mine    
     patterns=[]
-    for (pat,index) in prefixspan(tagged_sen_db,minsup):
+    for (pat,index) in prefixspan(tagged_sen_db,absolute_minsup):
         if len(pat)>=minlen:
             patterns.append(pat)
-    print 'There are '+str(len(patterns))+' have been found.'
+    print '[Done]There are '+str(len(patterns))+' patterns have been found.'
     f=open(current_path+'/data/'+output,'w')
     f.write(json.dumps(patterns))
     f.close()
@@ -68,8 +81,9 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument("--input",help="the input file name,default=tagged_GoodQA.dat",default='tagged_GoodQA.dat')
     parser.add_argument("--output",help="the output file name ,default=patterns.dat",default='patterns.dat')
-    parser.add_argument("--minsup",type=int,help="the minimal support for mining,default=3",default=3)
+    parser.add_argument("--minsup",type=float,help="the minimal support for mining,default=3",default=3)
+    parser.add_argument("--ispercent",help="indict the minsup value is percentage",action='store_true')
     parser.add_argument("--minlen",type=int,help="the minimal length for mining patterns,default=0",default=0)
     args=parser.parse_args()
 
-    mine_patterns(args.input,args.output,args.minsup,args.minlen)
+    mine_patterns(args.input,args.output,args.minsup,args.ispercent,args.minlen)

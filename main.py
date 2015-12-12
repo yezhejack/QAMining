@@ -15,7 +15,8 @@ if __name__=='__main__':
     parser.add_argument("--keypath",help="the path of key file default = current_path/ltp.key",default=current_path+'/data/ltp.key')
     parser.add_argument("--goodqapath",help="the path of Good QA file, default = current_path/GoodQA.dat",default=current_path+'/data/GoodQA.dat')
     parser.add_argument("--tominepath",help="the path of file to mine, default = current_path/subtitle.dat",default=current_path+'/data/subtitle.dat')
-    parser.add_argument("--minsup",type=int,help="the minimal support of the patterns, default=3",default=3)
+    parser.add_argument("--minsup",type=float,help="the minimal support of the patterns, default=3",default=3)
+    parser.add_argument("--ispercent",help="indict the minsup value is percentage",action='store_true')
     parser.add_argument("--minlen",type=int,help="the minimal length of any pattern, default=3",default=3)
     parser.add_argument("--outputpath",help="the path of file to store final result,default=data/result/dialogue.txt",default="data/result/dialogue.txt")
     args=parser.parse_args()
@@ -52,8 +53,20 @@ if __name__=='__main__':
     #mine pattern from good question-answer pairs
     print '***************************************'
     print 'Begin to mine patterns'
+    #get the absolute minsup
+    absolute_minsup=1
+    if args.ispercent==True:
+        absolute_minsup=int(args.minsup*len(sen_db)/100)
+    else:
+        absolute_minsup=int(args.minsup)
+
+    #check minimal support value
+    if absolute_minsup<=0 or absolute_minsup>len(sen_db):
+        print '[Error]The minsup is out of legal range!'
+        exit()
+
     patterns=[]
-    for (pat,index) in prefixspan(tagged_sen,args.minsup):
+    for (pat,index) in prefixspan(tagged_sen,absolute_minsup):
         if len(pat)>=args.minlen:
             patterns.append(pat)
     print patterns
