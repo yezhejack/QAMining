@@ -46,6 +46,8 @@ def evaluate(eval_file,standard_file,tagdatapos_file):
             recall+=1.0
     recall=recall/len(standard_index_list)
 
+    minimal_precision=(float)(len(standard_index_list))/last_index
+    print 'minimal_precision='+str(minimal_precision)
     print 'precision='+str(precision)
     print 'recall='+str(recall)
 
