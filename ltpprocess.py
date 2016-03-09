@@ -79,7 +79,7 @@ def tagger(input,output,tags,mode,keypath):
     sentence=input_file.readline()
     while sentence!='':
         sen_db.append(sentence)
-        tagged_sen_db.append(tagsentence(sentence,key,['pos','relate'],mode))
+        tagged_sen_db.append(tagsentence(sentence,key,tags,mode))
         print tagged_sen_db[-1]
         sentence=input_file.readline()
     input_file.close()
