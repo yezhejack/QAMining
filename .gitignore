@@ -1,5 +1,4 @@
 *.pyc
-*.xlsx
 .DS_Store
 *.key
 dialogue*.txt
