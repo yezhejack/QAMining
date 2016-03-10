@@ -1,1 +1,0 @@
-minimal_precision=0.343023255814precision=0.468468468468recall=0.293785310734minimal_precision=0.343023255814precision=0.0recall=0.0
