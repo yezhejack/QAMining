@@ -38,18 +38,29 @@ def evaluate(eval_file,standard_file,tagdatapos_file):
     for e_index in eval_index_list:
         if e_index in standard_index_list:
             precision+=1.0
-    precision=precision/len(eval_index_list)
+    
+    if len(eval_index_list)==0:
+        precision==0.0
+    else:
+        precision=precision/len(eval_index_list)
+
     #recall
     recall=0.0
     for s_index in standard_index_list:
         if s_index in eval_index_list:
             recall+=1.0
-    recall=recall/len(standard_index_list)
+
+    if len(standard_index_list)==0:
+        recall=0.0
+    else:
+        recall=recall/len(standard_index_list)
 
     minimal_precision=(float)(len(standard_index_list))/last_index
     print 'minimal_precision='+str(minimal_precision)
     print 'precision='+str(precision)
     print 'recall='+str(recall)
+
+    return minimal_precision,precision,recall
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser()

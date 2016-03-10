@@ -1,0 +1,10 @@
+minsup==90
+minlen==5
+minimal_precision=0.343023255814
+precision=0.468468468468
+recall=0.293785310734
+minsup==90
+minlen==6
+minimal_precision=0.343023255814
+precision=0.0
+recall=0.0
