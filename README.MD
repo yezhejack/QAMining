@@ -9,6 +9,7 @@ this version only use simple strategy to match patterns
   * the main body of the system
 * __prefixspan.py__
   * prefixspan module
+  * This module contains a lot of other mine modules, such as SPFM. 
 * __SubPreprocess.py__
   * process the subtitles
 * __subtitles.dat__
