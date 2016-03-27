@@ -1,6 +1,6 @@
 #coding:utf-8
 import argparse
-import prefixspan
+from pattern_mine import *
 import find_dialogue
 import evaluation
 
@@ -12,7 +12,7 @@ def auto_experiment(MAX_minsup,MIN_minsup,sup_gap,MAX_minlen,MIN_minlen,len_gap)
     while sup<=MAX_minsup:
         length=MIN_minlen
         while length<=MAX_minlen:
-            prefixspan.mine_patterns("tagged_GoodQA.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),sup,False,length)
+            mine_patterns("tagged_GoodQA.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),sup,False,length)
             find_dialogue.find("tagged_subtitle.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),"dialogues_minsup%d_minlen%d.txt" %(sup,length))
             (minimal_precision,precision,recall)=evaluation.evaluate("dialogues_minsup%d_minlen%d.txt" %(sup,length),"QA_subtitle.txt","tagdatapos.dat")
             output_file.write("\n")

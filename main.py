@@ -2,7 +2,7 @@
 import os
 from SubPreprocess import *
 from ltpprocess import *
-from prefixspan import *
+from pattern_mine import *
 import json
 import argparse
 current_path=''
