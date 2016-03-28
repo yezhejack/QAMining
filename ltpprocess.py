@@ -64,7 +64,7 @@ def tagsentence(text,api_key,attri,mode):
 #provide file io for tagging sentence
 #the inputfile must be in the data/
 #the outputfile will be in the data/
-def tagger(input,output,tags,mode,keypath):
+def tagger(input,output,tags,mode,keypath,maxlen):
     current_path=os.getcwd()
 
     key=''
@@ -78,9 +78,10 @@ def tagger(input,output,tags,mode,keypath):
     input_file=open(current_path+'/data/'+input,'r')
     sentence=input_file.readline()
     while sentence!='':
-        sen_db.append(sentence)
-        tagged_sen_db.append(tagsentence(sentence,key,tags,mode))
-        print tagged_sen_db[-1]
+        if len(sentence)<=maxlen:
+            sen_db.append(sentence)
+            tagged_sen_db.append(tagsentence(sentence,key,tags,mode))
+            print tagged_sen_db[-1]
         sentence=input_file.readline()
     input_file.close()
     print tagged_sen_db
@@ -98,6 +99,7 @@ if __name__=="__main__":
     parser.add_argument('--tags',nargs='+',help='the tags,default=[pos,relate]',default=['pos','relate'])
     parser.add_argument('--mode',help='the mode of ltp_server,default=local',default='local')
     parser.add_argument('--keypath',help='the key file of ltp_cloud,default=ltp.key',default='ltp.key')
+    parser.add_argument('--maxlen',type=int,help='the max length of sentence,default=0 means no limit',default=99999)
     args=parser.parse_args()
 
-    tagger(args.input,args.output,args.tags,args.mode,args.keypath)
+    tagger(args.input,args.output,args.tags,args.mode,args.keypath,args.maxlen)

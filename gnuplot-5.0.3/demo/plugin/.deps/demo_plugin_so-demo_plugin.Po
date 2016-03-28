@@ -1,0 +1,29 @@
+demo_plugin_so-demo_plugin.o: demo_plugin.c gnuplot_plugin.h \
+  ../../src/gp_types.h ../../src/syscfg.h ../../config.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdbool.h \
+  /usr/include/math.h /usr/include/sys/cdefs.h \
+  /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h
+
+gnuplot_plugin.h:
+
+../../src/gp_types.h:
+
+../../src/syscfg.h:
+
+../../config.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdbool.h:
+
+/usr/include/math.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_symbol_aliasing.h:
+
+/usr/include/sys/_posix_availability.h:
+
+/usr/include/Availability.h:
+
+/usr/include/AvailabilityInternal.h:

@@ -1,0 +1,1834 @@
+qtterminal/qt_term.o: qtterminal/qt_term.cpp \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QtCore \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstracteventdispatcher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qobject.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qobjectdefs.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qnamespace.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qglobal.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stddef.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qconfig.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config \
+  /usr/include/unistd.h /usr/include/_types.h /usr/include/sys/_types.h \
+  /usr/include/sys/cdefs.h /usr/include/sys/_symbol_aliasing.h \
+  /usr/include/sys/_posix_availability.h /usr/include/machine/_types.h \
+  /usr/include/i386/_types.h /usr/include/sys/_pthread/_pthread_types.h \
+  /usr/include/sys/unistd.h /usr/include/sys/_types/_posix_vdisable.h \
+  /usr/include/sys/_types/_seek_set.h /usr/include/sys/_types/_size_t.h \
+  /usr/include/_types/_uint64_t.h /usr/include/Availability.h \
+  /usr/include/AvailabilityInternal.h /usr/include/sys/_types/_ssize_t.h \
+  /usr/include/sys/_types/_uid_t.h /usr/include/sys/_types/_gid_t.h \
+  /usr/include/sys/_types/_intptr_t.h /usr/include/sys/_types/_off_t.h \
+  /usr/include/sys/_types/_pid_t.h /usr/include/sys/_types/_useconds_t.h \
+  /usr/include/sys/_types/_null.h /usr/include/sys/select.h \
+  /usr/include/sys/appleapiopts.h /usr/include/sys/_types/_fd_def.h \
+  /usr/include/sys/_types/_timespec.h /usr/include/sys/_types/_timeval.h \
+  /usr/include/sys/_types/_time_t.h \
+  /usr/include/sys/_types/_suseconds_t.h \
+  /usr/include/sys/_types/_sigset_t.h \
+  /usr/include/sys/_types/_fd_setsize.h \
+  /usr/include/sys/_types/_fd_set.h /usr/include/sys/_types/_fd_clr.h \
+  /usr/include/sys/_types/_fd_isset.h /usr/include/sys/_types/_fd_zero.h \
+  /usr/include/sys/_types/_fd_copy.h /usr/include/sys/_select.h \
+  /usr/include/sys/_types/_dev_t.h /usr/include/sys/_types/_mode_t.h \
+  /usr/include/sys/_types/_uuid_t.h /usr/include/gethostuuid.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/initializer_list \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstring \
+  /usr/include/string.h /usr/include/sys/_types/_rsize_t.h \
+  /usr/include/sys/_types/_errno_t.h /usr/include/strings.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple_03 \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/typeinfo \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdint \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdint.h \
+  /usr/include/stdint.h /usr/include/sys/_types/_int8_t.h \
+  /usr/include/sys/_types/_int16_t.h /usr/include/sys/_types/_int32_t.h \
+  /usr/include/sys/_types/_int64_t.h /usr/include/_types/_uint8_t.h \
+  /usr/include/_types/_uint16_t.h /usr/include/_types/_uint32_t.h \
+  /usr/include/sys/_types/_uintptr_t.h /usr/include/_types/_intmax_t.h \
+  /usr/include/_types/_uintmax_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/limits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base_03 \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd \
+  /usr/include/wchar.h /usr/include/sys/_types/_mbstate_t.h \
+  /usr/include/sys/_types/_ct_rune_t.h /usr/include/sys/_types/_rune_t.h \
+  /usr/include/sys/_types/_wchar_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdarg.h \
+  /usr/include/stdio.h /usr/include/sys/_types/_va_list.h \
+  /usr/include/sys/stdio.h /usr/include/time.h \
+  /usr/include/sys/_types/_clock_t.h /usr/include/_wctype.h \
+  /usr/include/sys/_types/_wint_t.h /usr/include/_types/_wctype_t.h \
+  /usr/include/ctype.h /usr/include/runetype.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__debug \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/tuple \
+  /usr/include/AvailabilityMacros.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfeatures.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstring.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qchar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbytearray.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbasicatomic.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_arch.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_macosx.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_x86_64.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdio \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwchar \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwctype \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cctype \
+  /usr/include/wctype.h /usr/include/_types/_wctrans_t.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stdexcept \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qlist.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qiterator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qalgorithms.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/list \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/limits.h \
+  /usr/include/limits.h /usr/include/machine/limits.h \
+  /usr/include/i386/limits.h /usr/include/i386/_limits.h \
+  /usr/include/sys/syslimits.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qscopedpointer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qeventloop.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractitemmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qvariant.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmetatype.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qdatastream.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qiodevice.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmap.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_03 \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qhash.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpair.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbasictimer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcoreapplication.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcoreevent.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmath.h /usr/include/math.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmetaobject.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmimedata.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qobjectcleanuphandler.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpointer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedmemory.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsignalmapper.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsocketnotifier.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsystemsemaphore.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtimer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtranslator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractanimation.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qanimationgroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qparallelanimationgroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpauseanimation.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpropertyanimation.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qvariantanimation.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qeasingcurve.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qvector.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__bit_reference \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/climits \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer \
+  /usr/include/stdlib.h /usr/include/sys/wait.h \
+  /usr/include/sys/_types/_id_t.h /usr/include/sys/signal.h \
+  /usr/include/machine/signal.h /usr/include/i386/signal.h \
+  /usr/include/machine/_mcontext.h /usr/include/i386/_mcontext.h \
+  /usr/include/mach/i386/_structs.h \
+  /usr/include/sys/_pthread/_pthread_attr_t.h \
+  /usr/include/sys/_types/_sigaltstack.h \
+  /usr/include/sys/_types/_ucontext.h /usr/include/sys/resource.h \
+  /usr/include/machine/endian.h /usr/include/i386/endian.h \
+  /usr/include/sys/_endian.h /usr/include/libkern/_OSByteOrder.h \
+  /usr/include/libkern/i386/_OSByteOrder.h /usr/include/alloca.h \
+  /usr/include/machine/types.h /usr/include/i386/types.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsequentialanimationgroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbitarray.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbytearraymatcher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcache.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcontainerfwd.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcontiguouscache.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qcryptographichash.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qdatetime.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedpointer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qshareddata.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedpointer_impl.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qelapsedtimer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qline.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpoint.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qlinkedlist.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qlocale.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmargins.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qqueue.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qrect.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsize.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qregexp.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qscopedvaluerollback.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qset.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstack.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstringbuilder.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstringlist.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstringmatcher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtextboundaryfinder.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtimeline.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qvarlengtharray.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfactoryinterface.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qlibrary.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qpluginloader.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/quuid.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qxmlstream.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qmutex.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qreadwritelock.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsemaphore.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qthread.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qthreadstorage.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qwaitcondition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractstate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstracttransition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qeventtransition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfinalstate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qhistorystate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsignaltransition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qstatemachine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfuture.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfutureinterface.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qrunnable.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentexception.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentresultstore.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qdebug.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtextstream.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentcompilertest.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfuturesynchronizer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfuturewatcher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfilter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfilterkernel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentiteratekernel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmedian.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentthreadengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qthreadpool.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmapkernel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentreducekernel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfunctionwrappers.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmap.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentrun.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentrunbase.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentstoredfunctioncall.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractfileengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qdir.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfileinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfile.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qbuffer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qdiriterator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfilesystemwatcher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qfsfileengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qprocess.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qresource.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qsettings.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtemporaryfile.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qurl.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qendian.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qlibraryinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QDate \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qnumeric.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtextcodec.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/qtextcodecplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QtGui \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaction.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qkeysequence.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowdefs.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmacdefines_mac.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpaintdevice.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpalette.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcolor.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qrgb.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qbrush.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmatrix.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpolygon.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qregion.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtransform.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpainterpath.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qimage.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpixmap.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfont.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfontmetrics.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfontinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsizepolicy.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcursor.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qicon.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qactiongroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qapplication.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qboxlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlayoutitem.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgridlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qclipboard.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdesktopwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdrag.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qevent.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmime.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qformlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QLayout \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgesture.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgesturerecognizer.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsessionmanager.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qshortcut.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsound.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstackedlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtooltip.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwhatsthis.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwidgetaction.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontext.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontextfactory.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontextplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractbutton.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractscrollarea.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qframe.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractslider.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractspinbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qvalidator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qbuttongroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcalendarwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcheckbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcombobox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractitemdelegate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleoption.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qslider.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtabbar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtabwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qrubberband.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcommandlinkbutton.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpushbutton.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdatetimeedit.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdial.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdialogbuttonbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdockwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfocusframe.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfontcombobox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfontdatabase.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgroupbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlabel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlcdnumber.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlineedit.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextcursor.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextformat.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpen.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextoption.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmainwindow.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmdiarea.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmdisubwindow.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmenu.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmenubar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmenudata.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qplaintextedit.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextedit.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocument.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstracttextdocumentlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qglyphrun.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qrawfont.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprintpreviewwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprinter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprogressbar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qradiobutton.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qscrollarea.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qscrollbar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsizegrip.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qspinbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsplashscreen.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsplitter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstackedwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstatusbar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextbrowser.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbutton.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qworkspace.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicseffect.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractitemview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qitemselectionmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractproxymodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcolumnview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdatawidgetmapper.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdirmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfileiconprovider.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qheaderview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qidentityproxymodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qitemdelegate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qitemeditorfactory.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlistview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qlistwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qproxymodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsortfilterproxymodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstandarditemmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstringlistmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleditemdelegate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtableview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtablewidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtreeview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtreewidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtreewidgetitemiterator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgenericmatrix.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmatrix4x4.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qvector3d.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qvector4d.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qquaternion.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qvector2d.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsymbianevent.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qs60mainapplication.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qs60mainappui.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qs60maindocument.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qvfbhdr.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwsembedwidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractpagesetupdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractprintdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcolordialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qerrormessage.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfiledialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfilesystemmodel.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qfontdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qinputdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmessagebox.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpagesetupdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprintdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprintpreviewdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprogressdialog.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwizard.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qkeyeventtransition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmouseeventtransition.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcolormap.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdrawutil.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpaintengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpainter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprintengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qprinterinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QList \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QPrinter \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstylepainter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwmatrix.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcompleter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qdesktopservices.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsystemtrayicon.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qundogroup.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qundostack.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qundoview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsanchorlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsitem.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslayoutitem.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsgridlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsitemanimation.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslinearlayout.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsproxywidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicswidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsscene.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicssceneevent.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicstransform.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QObject \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QVector3D \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QTransform \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QMatrix4x4 \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsview.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessible.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessible2.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessiblebridge.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessibleobject.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessibleplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessiblewidget.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcdestyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmotifstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcommonstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qcleanlooksstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qgtkstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QCleanlooksStyle \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QPalette \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QFont \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QFileDialog \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qplastiquestyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qproxystyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QCommonStyle \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qs60style.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstylefactory.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowscestyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsmobilestyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsvistastyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsxpstyle.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qstatictext.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qsyntaxhighlighter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextobject.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocumentfragment.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocumentwriter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtextlist.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qtexttable.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qbitmap.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qiconengine.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qiconengineplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qimageiohandler.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qimagereader.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qimagewriter.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qmovie.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpicture.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpictureformatplugin.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/qpixmapcache.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/QtNetwork \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qauthenticator.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhostaddress.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qabstractsocket.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhostinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkinterface.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkproxy.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qurlinfo.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qabstractnetworkcache.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkrequest.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QSharedDataPointer \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QString \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QUrl \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QVariant \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qftp.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhttp.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhttpmultipart.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QByteArray \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkRequest \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkaccessmanager.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkcookie.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QMetaType \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkCookieJar \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkcookiejar.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkCookie \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkdiskcache.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkreply.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QIODevice \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkAccessManager \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qssl.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QFlags \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslcertificate.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslcipher.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslconfiguration.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslsocket.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qtcpsocket.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslerror.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslkey.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qlocalserver.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qlocalsocket.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qtcpserver.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qudpsocket.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkconfigmanager.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkconfiguration.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworksession.h plot.h \
+  syscfg.h ../config.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdbool.h \
+  gp_types.h mouse.h mousecmn.h term_api.h stdfn.h /usr/include/errno.h \
+  /usr/include/sys/errno.h /usr/include/sys/types.h \
+  /usr/include/sys/_types/_blkcnt_t.h \
+  /usr/include/sys/_types/_blksize_t.h \
+  /usr/include/sys/_types/_in_addr_t.h \
+  /usr/include/sys/_types/_in_port_t.h /usr/include/sys/_types/_ino_t.h \
+  /usr/include/sys/_types/_ino64_t.h /usr/include/sys/_types/_key_t.h \
+  /usr/include/sys/_types/_nlink_t.h \
+  /usr/include/sys/_pthread/_pthread_cond_t.h \
+  /usr/include/sys/_pthread/_pthread_condattr_t.h \
+  /usr/include/sys/_pthread/_pthread_mutex_t.h \
+  /usr/include/sys/_pthread/_pthread_mutexattr_t.h \
+  /usr/include/sys/_pthread/_pthread_once_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlock_t.h \
+  /usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
+  /usr/include/sys/_pthread/_pthread_t.h \
+  /usr/include/sys/_pthread/_pthread_key_t.h \
+  /usr/include/sys/_types/_fsblkcnt_t.h \
+  /usr/include/sys/_types/_fsfilcnt_t.h /usr/include/sys/stat.h \
+  /usr/include/sys/_types/_s_ifmt.h /usr/include/sys/_types/_filesec_t.h \
+  /usr/include/sys/time.h /usr/include/sys/_types/_timeval64.h \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/float.h \
+  /usr/include/locale.h /usr/include/_locale.h /usr/include/dirent.h \
+  /usr/include/sys/dirent.h /usr/include/sys/param.h \
+  /usr/include/machine/param.h /usr/include/i386/param.h \
+  /usr/include/i386/_param.h color.h eval.h tables.h getcolor.h \
+  command.h util.h alloc.h parse.h axis.h gadgets.h \
+  /usr/include/signal.h qtterminal/qt_term.h qtterminal/QtGnuplotEvent.h \
+  qtterminal/QtGnuplotApplication.h \
+  /usr/local/Cellar/qt/4.8.7/include/QtGui/QApplication \
+  /usr/local/Cellar/qt/4.8.7/include/QtCore/QMap \
+  qtterminal/qt_conversion.cpp
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QtCore:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstracteventdispatcher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qobject.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qobjectdefs.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qnamespace.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qglobal.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stddef.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qconfig.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__config:
+
+/usr/include/unistd.h:
+
+/usr/include/_types.h:
+
+/usr/include/sys/_types.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/sys/_symbol_aliasing.h:
+
+/usr/include/sys/_posix_availability.h:
+
+/usr/include/machine/_types.h:
+
+/usr/include/i386/_types.h:
+
+/usr/include/sys/_pthread/_pthread_types.h:
+
+/usr/include/sys/unistd.h:
+
+/usr/include/sys/_types/_posix_vdisable.h:
+
+/usr/include/sys/_types/_seek_set.h:
+
+/usr/include/sys/_types/_size_t.h:
+
+/usr/include/_types/_uint64_t.h:
+
+/usr/include/Availability.h:
+
+/usr/include/AvailabilityInternal.h:
+
+/usr/include/sys/_types/_ssize_t.h:
+
+/usr/include/sys/_types/_uid_t.h:
+
+/usr/include/sys/_types/_gid_t.h:
+
+/usr/include/sys/_types/_intptr_t.h:
+
+/usr/include/sys/_types/_off_t.h:
+
+/usr/include/sys/_types/_pid_t.h:
+
+/usr/include/sys/_types/_useconds_t.h:
+
+/usr/include/sys/_types/_null.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/sys/appleapiopts.h:
+
+/usr/include/sys/_types/_fd_def.h:
+
+/usr/include/sys/_types/_timespec.h:
+
+/usr/include/sys/_types/_timeval.h:
+
+/usr/include/sys/_types/_time_t.h:
+
+/usr/include/sys/_types/_suseconds_t.h:
+
+/usr/include/sys/_types/_sigset_t.h:
+
+/usr/include/sys/_types/_fd_setsize.h:
+
+/usr/include/sys/_types/_fd_set.h:
+
+/usr/include/sys/_types/_fd_clr.h:
+
+/usr/include/sys/_types/_fd_isset.h:
+
+/usr/include/sys/_types/_fd_zero.h:
+
+/usr/include/sys/_types/_fd_copy.h:
+
+/usr/include/sys/_select.h:
+
+/usr/include/sys/_types/_dev_t.h:
+
+/usr/include/sys/_types/_mode_t.h:
+
+/usr/include/sys/_types/_uuid_t.h:
+
+/usr/include/gethostuuid.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/initializer_list:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstddef:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstring:
+
+/usr/include/string.h:
+
+/usr/include/sys/_types/_rsize_t.h:
+
+/usr/include/sys/_types/_errno_t.h:
+
+/usr/include/strings.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tuple_03:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/typeinfo:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/exception:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdint:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/sys/_types/_int8_t.h:
+
+/usr/include/sys/_types/_int16_t.h:
+
+/usr/include/sys/_types/_int32_t.h:
+
+/usr/include/sys/_types/_int64_t.h:
+
+/usr/include/_types/_uint8_t.h:
+
+/usr/include/_types/_uint16_t.h:
+
+/usr/include/_types/_uint32_t.h:
+
+/usr/include/sys/_types/_uintptr_t.h:
+
+/usr/include/_types/_intmax_t.h:
+
+/usr/include/_types/_uintmax_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/limits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__undef_min_max:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base_03:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd:
+
+/usr/include/wchar.h:
+
+/usr/include/sys/_types/_mbstate_t.h:
+
+/usr/include/sys/_types/_ct_rune_t.h:
+
+/usr/include/sys/_types/_rune_t.h:
+
+/usr/include/sys/_types/_wchar_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdarg.h:
+
+/usr/include/stdio.h:
+
+/usr/include/sys/_types/_va_list.h:
+
+/usr/include/sys/stdio.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/_types/_clock_t.h:
+
+/usr/include/_wctype.h:
+
+/usr/include/sys/_types/_wint_t.h:
+
+/usr/include/_types/_wctype_t.h:
+
+/usr/include/ctype.h:
+
+/usr/include/runetype.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__debug:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/tuple:
+
+/usr/include/AvailabilityMacros.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfeatures.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstring.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qchar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbytearray.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbasicatomic.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_arch.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_macosx.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qatomic_x86_64.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cstdio:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwchar:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cwctype:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/cctype:
+
+/usr/include/wctype.h:
+
+/usr/include/_types/_wctrans_t.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/stdexcept:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qlist.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qiterator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qalgorithms.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/list:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/limits.h:
+
+/usr/include/limits.h:
+
+/usr/include/machine/limits.h:
+
+/usr/include/i386/limits.h:
+
+/usr/include/i386/_limits.h:
+
+/usr/include/sys/syslimits.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qscopedpointer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qeventloop.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractitemmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qvariant.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmetatype.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qdatastream.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qiodevice.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmap.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/functional:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_03:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qhash.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpair.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbasictimer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcoreapplication.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcoreevent.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmath.h:
+
+/usr/include/math.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmetaobject.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmimedata.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qobjectcleanuphandler.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpointer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedmemory.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsignalmapper.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsocketnotifier.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsystemsemaphore.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtimer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtranslator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractanimation.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qanimationgroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qparallelanimationgroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpauseanimation.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpropertyanimation.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qvariantanimation.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qeasingcurve.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qvector.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__bit_reference:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/climits:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer:
+
+/usr/include/stdlib.h:
+
+/usr/include/sys/wait.h:
+
+/usr/include/sys/_types/_id_t.h:
+
+/usr/include/sys/signal.h:
+
+/usr/include/machine/signal.h:
+
+/usr/include/i386/signal.h:
+
+/usr/include/machine/_mcontext.h:
+
+/usr/include/i386/_mcontext.h:
+
+/usr/include/mach/i386/_structs.h:
+
+/usr/include/sys/_pthread/_pthread_attr_t.h:
+
+/usr/include/sys/_types/_sigaltstack.h:
+
+/usr/include/sys/_types/_ucontext.h:
+
+/usr/include/sys/resource.h:
+
+/usr/include/machine/endian.h:
+
+/usr/include/i386/endian.h:
+
+/usr/include/sys/_endian.h:
+
+/usr/include/libkern/_OSByteOrder.h:
+
+/usr/include/libkern/i386/_OSByteOrder.h:
+
+/usr/include/alloca.h:
+
+/usr/include/machine/types.h:
+
+/usr/include/i386/types.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsequentialanimationgroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbitarray.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbytearraymatcher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcache.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcontainerfwd.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcontiguouscache.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qcryptographichash.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qdatetime.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedpointer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qshareddata.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsharedpointer_impl.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qelapsedtimer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qline.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpoint.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qlinkedlist.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qlocale.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmargins.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qqueue.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qrect.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsize.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qregexp.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qscopedvaluerollback.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qset.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstack.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstringbuilder.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstringlist.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstringmatcher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtextboundaryfinder.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtimeline.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qvarlengtharray.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfactoryinterface.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qlibrary.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qpluginloader.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/quuid.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qxmlstream.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qmutex.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qreadwritelock.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsemaphore.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qthread.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qthreadstorage.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qwaitcondition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractstate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstracttransition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qeventtransition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfinalstate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qhistorystate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsignaltransition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qstatemachine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfuture.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfutureinterface.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qrunnable.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentexception.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentresultstore.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qdebug.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtextstream.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentcompilertest.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfuturesynchronizer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfuturewatcher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfilter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfilterkernel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentiteratekernel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmedian.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentthreadengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qthreadpool.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmapkernel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentreducekernel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentfunctionwrappers.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentmap.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentrun.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentrunbase.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtconcurrentstoredfunctioncall.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qabstractfileengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qdir.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfileinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfile.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qbuffer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qdiriterator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfilesystemwatcher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qfsfileengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qprocess.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qresource.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qsettings.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtemporaryfile.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qurl.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qendian.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qlibraryinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QDate:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qnumeric.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtextcodec.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/qtextcodecplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QtGui:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaction.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qkeysequence.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowdefs.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmacdefines_mac.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpaintdevice.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpalette.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcolor.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qrgb.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qbrush.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmatrix.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpolygon.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qregion.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtransform.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpainterpath.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qimage.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpixmap.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfont.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfontmetrics.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfontinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsizepolicy.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcursor.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qicon.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qactiongroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qapplication.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qboxlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlayoutitem.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgridlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qclipboard.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdesktopwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdrag.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qevent.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmime.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qformlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QLayout:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgesture.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgesturerecognizer.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsessionmanager.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qshortcut.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsound.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstackedlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtooltip.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwhatsthis.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwidgetaction.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontext.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontextfactory.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qinputcontextplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractbutton.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractscrollarea.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qframe.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractslider.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractspinbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qvalidator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qbuttongroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcalendarwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcheckbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcombobox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractitemdelegate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleoption.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qslider.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtabbar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtabwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qrubberband.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcommandlinkbutton.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpushbutton.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdatetimeedit.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdial.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdialogbuttonbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdockwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfocusframe.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfontcombobox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfontdatabase.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgroupbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlabel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlcdnumber.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlineedit.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextcursor.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextformat.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpen.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextoption.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmainwindow.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmdiarea.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmdisubwindow.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmenu.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmenubar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmenudata.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qplaintextedit.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextedit.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocument.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstracttextdocumentlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qglyphrun.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qrawfont.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprintpreviewwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprinter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprogressbar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qradiobutton.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qscrollarea.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qscrollbar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsizegrip.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qspinbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsplashscreen.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsplitter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstackedwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstatusbar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextbrowser.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtoolbutton.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qworkspace.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicseffect.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractitemview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qitemselectionmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractproxymodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcolumnview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdatawidgetmapper.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdirmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfileiconprovider.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qheaderview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qidentityproxymodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qitemdelegate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qitemeditorfactory.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlistview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qlistwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qproxymodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsortfilterproxymodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstandarditemmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstringlistmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleditemdelegate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtableview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtablewidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtreeview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtreewidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtreewidgetitemiterator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgenericmatrix.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmatrix4x4.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qvector3d.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qvector4d.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qquaternion.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qvector2d.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsymbianevent.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qs60mainapplication.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qs60mainappui.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qs60maindocument.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qvfbhdr.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwsembedwidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractpagesetupdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qabstractprintdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcolordialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qerrormessage.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfiledialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfilesystemmodel.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qfontdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qinputdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmessagebox.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpagesetupdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprintdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprintpreviewdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprogressdialog.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwizard.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qkeyeventtransition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmouseeventtransition.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcolormap.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdrawutil.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpaintengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpainter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprintengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qprinterinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QList:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QPrinter:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstylepainter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwmatrix.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcompleter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qdesktopservices.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsystemtrayicon.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qundogroup.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qundostack.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qundoview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsanchorlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsitem.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslayoutitem.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsgridlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsitemanimation.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicslinearlayout.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsproxywidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicswidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsscene.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicssceneevent.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicstransform.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QObject:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QVector3D:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QTransform:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QMatrix4x4:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgraphicsview.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessible.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessible2.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessiblebridge.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessibleobject.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessibleplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qaccessiblewidget.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcdestyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmotifstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcommonstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qcleanlooksstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qgtkstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QCleanlooksStyle:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QPalette:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QFont:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QFileDialog:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qplastiquestyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qproxystyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QCommonStyle:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qs60style.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstylefactory.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstyleplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowscestyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsmobilestyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsvistastyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qwindowsxpstyle.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qstatictext.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qsyntaxhighlighter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextobject.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocumentfragment.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextdocumentwriter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtextlist.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qtexttable.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qbitmap.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qiconengine.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qiconengineplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qimageiohandler.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qimagereader.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qimagewriter.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qmovie.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpicture.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpictureformatplugin.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/qpixmapcache.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/QtNetwork:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qauthenticator.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhostaddress.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qabstractsocket.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhostinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkinterface.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkproxy.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qurlinfo.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qabstractnetworkcache.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkrequest.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QSharedDataPointer:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QString:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QUrl:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QVariant:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qftp.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhttp.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qhttpmultipart.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QByteArray:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkRequest:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkaccessmanager.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkcookie.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QMetaType:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkCookieJar:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkcookiejar.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkCookie:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkdiskcache.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkreply.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QIODevice:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/QNetworkAccessManager:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qssl.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QFlags:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslcertificate.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslcipher.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslconfiguration.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslsocket.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qtcpsocket.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslerror.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qsslkey.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qlocalserver.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qlocalsocket.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qtcpserver.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qudpsocket.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkconfigmanager.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworkconfiguration.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtNetwork/qnetworksession.h:
+
+plot.h:
+
+syscfg.h:
+
+../config.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/stdbool.h:
+
+gp_types.h:
+
+mouse.h:
+
+mousecmn.h:
+
+term_api.h:
+
+stdfn.h:
+
+/usr/include/errno.h:
+
+/usr/include/sys/errno.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/sys/_types/_blkcnt_t.h:
+
+/usr/include/sys/_types/_blksize_t.h:
+
+/usr/include/sys/_types/_in_addr_t.h:
+
+/usr/include/sys/_types/_in_port_t.h:
+
+/usr/include/sys/_types/_ino_t.h:
+
+/usr/include/sys/_types/_ino64_t.h:
+
+/usr/include/sys/_types/_key_t.h:
+
+/usr/include/sys/_types/_nlink_t.h:
+
+/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+/usr/include/sys/_pthread/_pthread_condattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutex_t.h:
+
+/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_once_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlock_t.h:
+
+/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/usr/include/sys/_pthread/_pthread_t.h:
+
+/usr/include/sys/_pthread/_pthread_key_t.h:
+
+/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/sys/_types/_s_ifmt.h:
+
+/usr/include/sys/_types/_filesec_t.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/sys/_types/_timeval64.h:
+
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/float.h:
+
+/usr/include/locale.h:
+
+/usr/include/_locale.h:
+
+/usr/include/dirent.h:
+
+/usr/include/sys/dirent.h:
+
+/usr/include/sys/param.h:
+
+/usr/include/machine/param.h:
+
+/usr/include/i386/param.h:
+
+/usr/include/i386/_param.h:
+
+color.h:
+
+eval.h:
+
+tables.h:
+
+getcolor.h:
+
+command.h:
+
+util.h:
+
+alloc.h:
+
+parse.h:
+
+axis.h:
+
+gadgets.h:
+
+/usr/include/signal.h:
+
+qtterminal/qt_term.h:
+
+qtterminal/QtGnuplotEvent.h:
+
+qtterminal/QtGnuplotApplication.h:
+
+/usr/local/Cellar/qt/4.8.7/include/QtGui/QApplication:
+
+/usr/local/Cellar/qt/4.8.7/include/QtCore/QMap:
+
+qtterminal/qt_conversion.cpp:
