@@ -80,3 +80,8 @@ The value of minisup can be float. But if there is no 'ispercent' followed, the 
 
 ##### tagdata #####
 It will help me to tag the data by hand and it can be recover from last place. 
+
+#### something about data/ ####
+* Answer_patterns.dat comes from tagged_GoodQA_Answer.dat
+* .dat means the clean data
+* .txt means the rough data
