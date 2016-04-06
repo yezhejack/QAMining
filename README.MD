@@ -22,6 +22,11 @@ this version only use simple strategy to match patterns
   * it's helpful tool to tag the data for training or evaluation
 * __extract_keywords.py__
   * get the top-k keywords in the training data
+* __xlsx_to_txt.py__
+  * generate dialogue from the XunFei xlsx database into plain text
+* __classifier.py__
+  * using the libsvm to determine whether the dialogue
+
 * _/data_
   * contains the data used in the project
     * __GoodQA.dat__
@@ -32,9 +37,9 @@ this version only use simple strategy to match patterns
       * put the srt format subtitles
     * __subtitle.dat__
       * the good format subtitle
+    * __keywords.txt__
+      * the most useful word to detect dialogue
 
-* _classifier.py_
-  * using the libsvm to determine whether the dialogue
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
 #### hardcode problem ####
