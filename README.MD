@@ -7,7 +7,7 @@ this version only use simple strategy to match patterns
 #### directory and file explain ####
 * __main.py__
   * the main body of the system
-* __prefixspan.py__
+* __pattern_mine.py__
   * pattern_mine module
   * This module contains a lot of other mine modules, such as SPFM. 
 * __SubPreprocess.py__
@@ -20,6 +20,8 @@ this version only use simple strategy to match patterns
   * provide interface to find the dialogue matched a pattern
 * __tagdata.py__
   * it's helpful tool to tag the data for training or evaluation
+* __extract_keywords.py__
+  * get the top-k keywords in the training data
 * _/data_
   * contains the data used in the project
     * __GoodQA.dat__
@@ -31,7 +33,8 @@ this version only use simple strategy to match patterns
     * __subtitle.dat__
       * the good format subtitle
 
-
+* _classifier.py_
+  * using the libsvm to determine whether the dialogue
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
 #### hardcode problem ####
@@ -57,9 +60,9 @@ Instead of running main.py, we can call the python script one by one to mine dia
   ```
   The two files, tagged_subtitle.dat and tagged_GoodQA.dat, have two lines, first line is a json string of original sentences and the second line is the tags of original sentences in same order.
 
-4. Using prefixspan.py to mine the sequence patterns from tagged_GoodQA.dat
+4. Using pattern_mine.py to mine the sequence patterns from tagged_GoodQA.dat
   ```
-  python prefixspan --minsup 30 --minlen 10 --input tagged_GoodQA.dat --output patterns.dat
+  python pattern_mine --minsup 30 --minlen 10 --input tagged_GoodQA.dat --output patterns.dat
   ```
 5. Using find_dialogue.py to find the sentence matched with any pattern of 'patterns.dat'
   ```
