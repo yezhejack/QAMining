@@ -1,5 +1,7 @@
 ### Mining Question-Answer pairs from texts and subtitles ###
-the prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
+prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
+
+The version after `1.0.0` will not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
 
 #### simple version ####
 this version only use simple strategy to match patterns
@@ -94,14 +96,14 @@ Instead of running main.py, we can call the python script one by one to mine dia
   ```
 
 #### modules features ####
-##### prefixspan #####
+##### pattern_mine #####
 minsup can be the absolute format or the percentage format. For example, if you want to mine the patterns have a minimal support value 20.
 ```
-python prefixspan.py --minsup 20
+python pattern_mine.py --minsup 20
 ```
 If you want it to be 20%.
 ```
-python prefixspan.py --minsup 20 --ispercent
+python pattern_mine.py --minsup 20 --ispercent
 ```
 The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value.
 
@@ -110,6 +112,6 @@ It will help me to tag the data by hand and it can be recover from last place.
 
 #### something about data/ ####
 * Answer_patterns.dat comes from tagged\_GoodQA\_Answer.dat
-* .dat means the clean data
-* .txt means the rough data
+* .dat means the mid-step input and output
+* .txt means the input and output of the whols system
 * .tmp means the temporary file which will be deleted after the tasks

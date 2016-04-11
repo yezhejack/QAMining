@@ -12,31 +12,6 @@ if __name__=="__main__":
     neg_sen_db=json.loads(line)
 
     print '[Finished] reading seg sen db'
-    '''
-    pos_file=open('data/dialogues_positive.txt','r')
-    neg_file=open('data/dialogues_negative.txt','r')
-    line=pos_file.readline()
-    print line
-    while line!="":
-        line=pos_file.readline()
-        pos_sen_db.append(segment_sentence(line,"","local"))
-        line=pos_file.readline()
-        pos_sen_db.append(segment_sentence(line,"","local"))
-        line=pos_file.readline()
-        print line
-    
-    line=neg_file.readline()
-    print line
-    while line!="":
-        line=neg_file.readline()
-        neg_sen_db.append(segment_sentence(line,"","local"))
-        line=neg_file.readline()
-        neg_sen_db.append(segment_sentence(line,"","local"))
-        line=neg_file.readline()
-        print line
-    pos_file.close()
-    neg_file.close()
-    '''
 
     pos_word_count_dict={}
     pos_total_word=0
