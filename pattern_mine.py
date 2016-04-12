@@ -170,7 +170,7 @@ def mine_patterns_multiple_minsup(input,output,alpha):
     f.close()
 
 # Mining Frequent Maximal Sequential Patterns Using the MaxSP Algorithm
-def MaxSP(input,output,minsup):
+def MaxSP(input,output,minsup,minlen):
     # This function will produce a temporary file to contain the transfered sequence 
     # .eg only contains number(>=1)
     
@@ -228,6 +228,8 @@ def MaxSP(input,output,minsup):
                     index=int(word)
                     if index!=-1:
                         seq.append(num_tag_list[index])
+            #if seq[0].split('-')[0]=="1" and seq[-1].split('-')[0]=="2":
+            #    patterns.append(seq)
             patterns.append(seq)
             line=f.readline()
         f.close()
@@ -260,5 +262,5 @@ if __name__=='__main__':
         mine_patterns_multiple_minsup(args.input,args.output,args.alpha)
         exit()
     if args.method=='MaxSP':
-        MaxSP(args.input,args.output,args.minsup)
+        MaxSP(args.input,args.output,args.minsup,args.minlen)
         exit()

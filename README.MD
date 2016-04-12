@@ -58,7 +58,15 @@ this version only use simple strategy to match patterns
 	  * the mine result of myself as the standard result
 	* __tagdatapos.dat__
 	  * record the tagdata procedure for `tagdata.py`
-	
+	* __tagged_dialogues_positive_simple.dat__
+	  * json format
+	  * first is sentence database
+	  * second line is tagged dialogues database
+	* __dialogues_positive_simple.txt__
+	  * it's a simple version for dialogues come from 1500.xlsx
+	* __dialogues_test.txt__
+	  * dialuges come from subtitle for test
+	  * list every two close lines as a candidate dialogues
 #### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
 #### hardcode problem ####

@@ -8,29 +8,24 @@
 import os
 import argparse
 import json
+from find_dialogue import *
 
-if __name__=="__main__":
+def method_0(pos_input,neg_input):
     current_path=os.getcwd()
-    #parse the arguments
-    parser=argparse.ArgumentParser()
-    parser.add_argument('--pos_input',help='the name of input file in ./data/,default=tagged_GoodQA.dat',default='tagged_GoodQA.dat')
-    parser.add_argument('--neg_input',help='the name of output file in ./data/,default=tagged_GoodQA_Answer.dat',default='tagged_GoodQA_Answer.dat')
-    args=parser.parse_args()
-    
     # read positive input
-    f=open(current_path+'/data/'+args.pos_input,'r')
+    f=open(current_path+'/data/'+pos_input,'r')
     tmp_str=f.readline()
     pos_patterns=json.loads(tmp_str)
     f.close()
     
     # read negative input
-    f=open(current_path+'/data/'+args.neg_input,'r')
+    f=open(current_path+'/data/'+neg_input,'r')
     tmp_str=f.readline()
     neg_patterns=json.loads(tmp_str)
     f.close()
 
     # turn the data into vectors and output the result into tmp_libsvm.dat
-    f=open(current_path+'/data/tmp_libsvm_train.dat','w')
+    f=open(current_path+'/data/libsvm_train.tmp','w')
     tag_index_dict={}
     counter=0
     for pat in pos_patterns:
@@ -88,7 +83,7 @@ if __name__=="__main__":
         f.write(sen)
     f.close()
 
-    os.system("svm-train data/tmp_libsvm.dat")
+    os.system("svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
     
     # turn the test data into vectors
     f=open(current_path+'/data/tagdatapos.dat','r')
@@ -111,7 +106,7 @@ if __name__=="__main__":
         line=f.readline()
     f.close()
     
-    f=open(current_path+'/data/tmp_libsvm_test.dat','w')
+    f=open(current_path+'/data/libsvm_test.tmp','w')
     for i in range(0,end_line_num):
         if i+1 in pos_list:
             sen="1"
@@ -139,7 +134,105 @@ if __name__=="__main__":
         f.write(sen)
     f.close()
 
-    os.system('svm-predict data/tmp_libsvm_test.dat data/tmp_libsvm.dat.model data/libsvm.result')
+    os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+
+
+def method_1(pos_input,neg_input,pat_input,test_input):
+    current_path=os.getcwd()
+    # read positive input
+    f=open(current_path+'/data/'+pos_input,'r')
+    tmp_str=f.readline()
+    tmp_str=f.readline()
+    pos_dials=json.loads(tmp_str)
+    print pos_dials[0]
+    f.close()
+    
+    # read negative input
+    f=open(current_path+'/data/'+neg_input,'r')
+    tmp_str=f.readline()
+    tmp_str=f.readline()
+    neg_dials=json.loads(tmp_str)
+    print neg_dials[0]
+    f.close()
+
+    #read patterns from disk
+    f=open(current_path+'/data/'+pat_input,'r')
+    tmp_str=f.readline()
+    patterns=json.loads(tmp_str)
+    f.close()
+
+    f=open(current_path+'/data/libsvm_train.tmp','w')
+    for dial in pos_dials:
+        sen="1"
+        for i in range(1,len(patterns)+1):
+            if ismatched(dial,patterns[i-1])==True:
+                sen=sen+" "+str(i)+":1";
+        sen=sen+'\n'
+        f.write(sen)
+    
+    for dial in pos_dials:
+        sen="-1"
+        for i in range(1,len(patterns)+1):
+            if ismatched(dial,patterns[i-1])==True:
+                sen=sen+" "+str(i)+":1";
+        sen=sen+'\n'
+        f.write(sen)
+    f.close()
+
+    # construct test file
+    # turn the test data into vectors
+    f=open(current_path+'/data/tagdatapos.dat','r')
+    end_line_num=int(f.readline())
+    f.close()
+
+    f=open(current_path+'/data/QA_subtitle.txt','r')
+    pos_list=[]
+    line=f.readline()
+    while line!="":
+        pos_list.append(int(line))
+        line=f.readline()
+        line=f.readline()
+        line=f.readline()
+    f.close()
+
+    #sentence database and tagged dialogues database from disk
+    f=open(current_path+'/data/'+test_input)
+    sen_db=json.loads(f.readline())
+    tagged_dial_db=json.loads(f.readline())
+    f.close()
+
+    f=open(current_path+'/data/libsvm_test.tmp','w')
+    for i in range(0,end_line_num):
+        if i+1 in pos_list:
+            sen="1"
+        else:
+            sen="-1"
+        
+        for j in range(1,len(patterns)+1):
+            if ismatched(tagged_dial_db[i],patterns[j-1])==True:
+                sen=sen+" "+str(j)+":1";
+        sen=sen+'\n'
+        f.write(sen)
+    f.close()
+
+    os.system("svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+
+if __name__=="__main__":
+    
+    #parse the arguments
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--pos_input',help='the name of input file in ./data/,default=tagged_GoodQA.dat',default='tagged_GoodQA.dat')
+    parser.add_argument('--neg_input',help='the name of output file in ./data/,default=tagged_GoodQA_Answer.dat',default='tagged_GoodQA_Answer.dat')
+    parser.add_argument('--pat_input',help="the name of pattern file in ./data/,default=patterns.dat",default="patterns.dat")
+    parser.add_argument('--test_input',help="the name of test file in ./data/,default=tagged_dialogues_test.dat",default="tagged_dialogues_test.dat")
+    parser.add_argument('--method',help='the method name of libsvm\n0-detect the question of dialogues\n1-using pattern to predict',default='0')
+    args=parser.parse_args()
+    
+    if args.method=="0":
+        method_0(args.pos_input,args.neg_input)
+    elif args.method=="1":
+        method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input)
 
     
 

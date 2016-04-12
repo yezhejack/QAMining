@@ -70,3 +70,32 @@ def SplitSenInALine(input_path,output_path):
         tmp_str=input_file.readline()
     input_file.close()
     output_file.close()
+
+# output the every dialogues of the subtitle
+# for example 
+# input
+# A
+# B
+# C
+# output
+# 1
+# A
+# B
+# 2
+# B
+# C
+def SubToDialogues(input_path,output_path):
+    input_file=open(input_path,'r')
+    output_file=open(output_path,'w')
+    counter=1
+    first_str=input_file.readline()
+    second_str=input_file.readline()
+    while second_str!='':
+        output_file.write(str(counter)+'\n')
+        output_file.write(first_str.strip()+'\n')
+        output_file.write(second_str.strip()+'\n')
+        counter+=1
+        first_str=second_str
+        second_str=input_file.readline()
+    input_file.close()
+    output_file.close()

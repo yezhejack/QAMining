@@ -71,7 +71,7 @@ def tagsentence(text,api_key,attri,mode):
 # mode: 'local' stands for calling the ltp_server of local host
 #      'remote' stands for calling the ltp_cloud
 # flag '1':the first sentence of a dialogue '2': the second sentence of it
-def tagsentence_keywords(text,api_key,attri,mode,flag):
+def tagsentence_keywords(text,api_key,attri,mode,sen_flag):
 
     # read keywords from keywords.txt
     f=open('data/keywords.txt','r')
@@ -79,7 +79,7 @@ def tagsentence_keywords(text,api_key,attri,mode,flag):
     line=f.readline()
     while line!="":
         line=line.strip()
-        keywords.append(line)
+        keywords.append(line.decode('utf8'))
         line=f.readline()
     f.close()
 
@@ -95,7 +95,7 @@ def tagsentence_keywords(text,api_key,attri,mode,flag):
         content_json=json.loads(content)[0][0]
         seq=[]
         for sen_json in content_json:
-            seq_word=flag+'-'
+            seq_word=sen_flag+'-'
             if sen_json['cont'] in keywords:
                 seq_word=seq_word+sen_json['cont']+'-'
             for i in range(len(attri)):
@@ -124,12 +124,12 @@ def tagsentence_keywords(text,api_key,attri,mode,flag):
                 flag=False
         seq=[]
         for word in tree.iter('word'):
-            seq_word=flag+'-'
+            seq_word=sen_flag+'-'
             if word.attrib['cont'] in keywords:
                 seq_word=seq_word+word.attrib['cont']+'-'
             for i in range(len(attri)):
                 if i==0:
-                    seq_word=word.attrib[attri[i]]
+                    seq_word=seq_word+word.attrib[attri[i]]
                 else:
                     seq_word=seq_word+'-'+word.attrib[attri[i]]
             seq.append(seq_word)
@@ -152,8 +152,9 @@ def tagger(input,output,tags,mode,keypath,maxlen,tag_type):
 
     sen_db=[]
     tagged_sen_db=[]
+    tagged_dia_db=[]
     input_file=open(current_path+'/data/'+input,'r')
-    sentence=input_file.readline()
+    sentence=input_file.readline().strip()
 
     if tag_type==1:
         while sentence!='':
@@ -161,24 +162,63 @@ def tagger(input,output,tags,mode,keypath,maxlen,tag_type):
                 sen_db.append(sentence)
                 tagged_sen_db.append(tagsentence(sentence,key,tags,mode))
                 print tagged_sen_db[-1]
-            sentence=input_file.readline()
+            sentence=input_file.readline().strip()
+        print tagged_sen_db
+        output_file=open(current_path+'/data/'+output,'w')
+        output_file.write(json.dumps(sen_db)+'\n')
+        output_file.write(json.dumps(tagged_sen_db))
+        output_file.close()
+
+    elif tag_type==2: # a case contains three lines
+
+        while sentence!='':
+            while sentence !='' and sentence.isdigit()==False :
+                sentence=input_file.readline().strip()
+            if sentence=='':
+                break
+            print sentence
+
+            tagged_dia=[]
+
+            sentence=input_file.readline().strip()
+            sen_db.append(sentence)
+            tagged_dia=tagged_dia+tagsentence_keywords(sentence,key,tags,mode,"1")
+          
+            sentence=input_file.readline().strip()
+            sen_db.append(sentence)
+            tagged_dia=tagged_dia+tagsentence_keywords(sentence,key,tags,mode,"2")
+            tagged_dia_db.append(tagged_dia)
+            
+            print tagged_dia_db[-1]
+            
+            sentence=input_file.readline().strip()
+        
+        print tagged_sen_db
+        output_file=open(current_path+'/data/'+output,'w')
+        output_file.write(json.dumps(sen_db)+'\n')
+        output_file.write(json.dumps(tagged_dia_db))
+        output_file.close()
     
-    elif tag_type==2:
+    elif tag_type==3:
+        sen_db.append(sentence)
+        sentence=input_file.readline().strip()
         while sentence!='':
             sen_db.append(sentence)
-            tagged_sen_db.append(tagsentence_keywords(sentence,key,tags,mode))
-            print tagged_sen_db[-1]
-            
-            sentence=input_file.readline()
+            tagged_dia=tagsentence_keywords(sen_db[-2],key,tags,mode,"1")
+            tagged_dia=tagged_dia+tagsentence_keywords(sen_db[-1],key,tags,mode,"2")
 
+            tagged_dia_db.append(tagged_dia)
+
+            sentence=input_file.readline().strip()
+        
+        print tagged_sen_db
+        output_file=open(current_path+'/data/'+output,'w')
+        output_file.write(json.dumps(sen_db)+'\n')
+        output_file.write(json.dumps(tagged_dia_db))
+        output_file.close()
+    
     input_file.close()
-    print tagged_sen_db
-
-    output_file=open(current_path+'/data/'+output,'w')
-    output_file.write(json.dumps(sen_db)+'\n')
-    output_file.write(json.dumps(tagged_sen_db))
-    output_file.close()
-
+    
 def segment_sentence(text,api_key,mode):
     if mode=='remote':
         url_get_base = "http://api.ltp-cloud.com/analysis/?"
@@ -224,7 +264,7 @@ if __name__=="__main__":
     parser.add_argument('--mode',help='the mode of ltp_server,default=local',default='local')
     parser.add_argument('--keypath',help='the key file of ltp_cloud,default=ltp.key',default='ltp.key')
     parser.add_argument('--maxlen',type=int,help='the max length of sentence,default=0 means no limit',default=99999)
-    parser.add_argument('--tag_type',type=int,help='the type of tag,1:no keywords  2: with keywords and flag',default=1)
+    parser.add_argument('--tag_type',type=int,help='the type of tag,1:no keywords  \n2: with keywords and flag\n3: like 2 but without number',default=1)
     args=parser.parse_args()
 
     tagger(args.input,args.output,args.tags,args.mode,args.keypath,args.maxlen,args.tag_type)
