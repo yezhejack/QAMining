@@ -1,17 +1,21 @@
-### Mining Question-Answer pairs from texts and subtitles ###
-prefixspan.py is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
+# Mining Question-Answer pairs from texts and subtitles #
 
-The version after `1.0.0` will not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
+## Introduction ##
+The function `prefixspan` in `pattern_mine.py` is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
 
-#### simple version ####
-this version only use simple strategy to match patterns
+The version after `1.0.0` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
 
-#### directory and file explain ####
+## ChangeLog ##
+
+* `Version 1.0.0` only use simple strategy to match patterns
+* `Version 1.0.1` using machine learning methods to imporve the performance. 
+
+## directory and file explain ##
 
 * __auto_experiment.py__
   * test automatically
 * __classifier.py__
-  * using the libsvm to determine whether the dialogue
+  * using the libsvm to determine a sentences pair whether is a dialogue
 * __evaluation.py__
   * evaluate the mine result
 * __extract_keywords.py__
@@ -67,22 +71,32 @@ this version only use simple strategy to match patterns
 	* __dialogues_test.txt__
 	  * dialuges come from subtitle for test
 	  * list every two close lines as a candidate dialogues
-#### create a file named 'ltp.key' that containes key of ltp-cloud ####
 
-#### hardcode problem ####
-1. url
+## How to use ##
+This code doesn't provide a very universial way to call every part of `QA_Mining`. This code is designed for experiments. To save the time, you can 
 
-#### set local ltp server ####
+### Setting LTP ###
+
+#### using cloud service of HIT-LTP ####
+Create a file named 'ltp.key' that containes key of ltp-cloud. Then put is in the `./data`.
+
+#### using local HIT-LTP server ####
 It's recommended to use ltp comes from HIT-SCIR instead of ltp-cloud. So we need to set up a ltp server in a local network.
+
+```
 https://github.com/HIT-SCIR/ltp
+```
 
-#### main.py ####
-main.py provides the whole procedure to mine dialogues.
+Version 3.0.0 has the memory leak problem.
 
-#### faster experiment ####
-Instead of running main.py, we can call the python script one by one to mine dialogue. It's a good way to take our time to adjust model and some modules. Every module provide input and output file configurations. For example, we can run the ltpprocess.py only once to tag the sentence for the same sentence data. We store the result in the disk, so we can test many ways to mine sequence patterns without extra running of ltpprocess.py.
+Start Command
 
-#### a example ####
+```
+./bin/ltp_server --threads 1
+```
+
+
+### Example:simple strategy ###
 1. A plain subtitles file is needed. Every line is a sentence. It is named after 'subtitle.dat'
 2. A positive example is needed. This file  is named after `GoodQA.dat` which contains the first sentences of all good Question-Answer pairs.
 3. Using ltpprocess.py to tag `subtitle.dat` and `GoodQA.dat`
@@ -102,23 +116,104 @@ Instead of running main.py, we can call the python script one by one to mine dia
   ```
   python find_dialogue -o dialogues_minsup30_minlen_10.txt
   ```
+  
+#### faster experiment tool ####
+Instead of running main.py, we can call the python script one by one to mine dialogue. It's a good way to take our time to adjust model and some modules. Every module provide input and output file configurations. For example, we can run the ltpprocess.py only once to tag the sentence for the same sentence data. We store the result in the disk, so we can test many ways to mine sequence patterns without extra running of ltpprocess.py.
 
-#### modules features ####
-##### pattern_mine #####
+### Example:using machine learning method ###
+to be finished........
+
+## Details ##
+
+### main.py ###
+main.py provides the whole procedure to mine dialogues.
+
+
+### tagdata.py ###
+It will help me to tag the data by hand and it can be recover from last place. I mainly use it to provide test data. 
+
+parameters 
+
+* `--input` The file name of subtitle.
+* `--output` The file name of result file contained the dialogues that are mined from `--input` by hand.
+* `--new` A flag to tell code whether to start a new tag task. Because this code supports continuing the last task.
+* `--position`The file contains the last task status. Only 
+
+### ltpprocess.py ###
+It provides the tool to process sentence or dialogues.
+
+It has three tag type:
+
+1. Only keep the ltp tag
+
+2. Keep the keywords saved in `./data/keywords.txt`. Tag a dialogues every time. When tagging the first sentence it will add `1` to every tag and when tagging the second sentence it will add `2` to every tag. BEFOR EVERY DIALOGUE IT SHOULD EXIST A NUMBER OCCPUYED A LINE.
+
+3. It is used for tagging a subtitile file. It assume every two close lines as a dialogues. And then tag them. For example,there are 1000 lines in a subtitle, it will produce 999 dialuges.
+
+### xlsx\_to\_txt.py ###
+This module's name is weird. But its main goal is to construct positive cases and negative cases.
+
+It doesn't provide choice for input file name. Two input files are needed. 
+
+1. `./data/subtitle.dat`:every line is sentence in the order of time come from subtitile
+2. `./data/1500.xlsx`:specific data
+
+There are three output files:
+
+1. `./data/dialogues_positive.txt`:every three line is a positive dialogues: `index` `first sentence``seconde sentence`
+2. `./data/dialogues_negative.txt`like last term, but the cases are negative.
+3. `./data/seg_sen_db.dat`.Two lines. The first line contains positive cases and the second line contains negative cases. After load, it is a list. list->list->word. It's the result of segment
+
+
+### extract_keywords.py ###
+It has hard code problem. You should have a file located in `./data/seg_sen_db.dat`. It contains two lines.Every line is a json format string.The first line contains positive cases and the second line contains negative cases. After load, it is a list. list->list->word. 
+
+This module will extract top-k useful word to help classifier to identify dialogues.
+
+### pattern_mine.py ###
+It provide three ways to mine patterns.
+
+1. prefixspan
+2. multiple minsup prefixspan
+3. maximial sequential pattern
+
+### find_dialogue.py ###
+This module will using the patterns found by `pattern_mine.py` to match the dialogues. It only cover the first sentence of a dialogue.
+
+### classifier.py ###
+This module uses machine learning methods to detect the dialogues.It has two methods:
+
+1. directly input the tagged_sentence without keywords to train a svm
+2. combine patterns to train a svm
+
+## usage ##
+
+#### old usage ####
 minsup can be the absolute format or the percentage format. For example, if you want to mine the patterns have a minimal support value 20.
+
 ```
-python pattern_mine.py --minsup 20
+python pattern_mine.py --minsup 20 --method prefixspan
 ```
 If you want it to be 20%.
+
 ```
-python pattern_mine.py --minsup 20 --ispercent
+python pattern_mine.py --minsup 20 --ispercent --method prefixspan
 ```
 The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value.
 
-##### tagdata #####
-It will help me to tag the data by hand and it can be recover from last place. 
+#### recommended usage ####
+```
+python pattern_mine.py --input tagged_dialogues_positive_simple.dat --method MaxSP --minsup 0.05
+```
 
-#### something about data/ ####
+```
+python classifier.py --pos_input tagged_dialogues_positive_simple.dat --neg_input tagged_dialogues_negative.dat --method 1 --test_input tagged_dialogues_test.dat
+```
+
+The parameter of `--minsup` should be adjusted to produce a proper quantity of patterns.
+
+
+### something about data/ ###
 * Answer_patterns.dat comes from tagged\_GoodQA\_Answer.dat
 * .dat means the mid-step input and output
 * .txt means the input and output of the whols system

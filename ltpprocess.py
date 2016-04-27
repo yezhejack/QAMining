@@ -51,6 +51,7 @@ def tagsentence(text,api_key,attri,mode):
             except BaseException:
                 flag=False
         seq=[]
+
         for word in tree.iter('word'):
             seq_word=[]
             for i in range(len(attri)):

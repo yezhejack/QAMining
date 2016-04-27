@@ -43,8 +43,7 @@ if __name__=="__main__":
                             dialogues_index+=1
                             
                 question=[]
-                seg_question=[]
-                ans=[]
+                seg_questiono                ans=[]
                 seg_ans=[]
             else:
                 if row[1].value:

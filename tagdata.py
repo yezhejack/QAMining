@@ -1,8 +1,8 @@
-#coding:utf-8
-#this program provide the quick way to tag the good QA of the subtitles
-#this program will recover from the last QA index of the output_file
-#output_file example
-'35\n<Qsentence>\n<Asentence>\n'
+# coding:utf-8
+# this program provide the quick way to tag the good QA of the subtitles
+# this program will recover from the last QA index of the output_file
+# output_file example
+# '35\n<Qsentence>\n<Asentence>\n'
 import os
 import sys
 import argparse

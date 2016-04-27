@@ -14,24 +14,30 @@ def method_0(pos_input,neg_input):
     current_path=os.getcwd()
     # read positive input
     f=open(current_path+'/data/'+pos_input,'r')
+    f.readline()
     tmp_str=f.readline()
     pos_patterns=json.loads(tmp_str)
+    print pos_patterns[0]
     f.close()
     
     # read negative input
     f=open(current_path+'/data/'+neg_input,'r')
+    f.readline()
     tmp_str=f.readline()
     neg_patterns=json.loads(tmp_str)
+    print neg_patterns[0]
     f.close()
 
-    # turn the data into vectors and output the result into tmp_libsvm.dat
+    # turn the data into vectors and output the result into libsvm_train.dat
     f=open(current_path+'/data/libsvm_train.tmp','w')
     tag_index_dict={}
     counter=0
     for pat in pos_patterns:
+        print pat
         sen="1"
         l=[]
         for tag in pat:
+            print tag
             if tag in tag_index_dict:
                 l.append(tag_index_dict[tag])
             else:
@@ -92,8 +98,10 @@ def method_0(pos_input,neg_input):
 
     #read tagged sentences
     f=open(current_path+'/data/tagged_subtitle.dat','r')
+    f.readline()
     tmp_str=f.readline()
     tagged_sen_db=json.loads(tmp_str)
+    print tagged_sen_db[0]
     f.close()
 
     f=open(current_path+'/data/QA_subtitle.txt','r')
@@ -144,7 +152,6 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     tmp_str=f.readline()
     tmp_str=f.readline()
     pos_dials=json.loads(tmp_str)
-    print pos_dials[0]
     f.close()
     
     # read negative input
@@ -152,7 +159,6 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     tmp_str=f.readline()
     tmp_str=f.readline()
     neg_dials=json.loads(tmp_str)
-    print neg_dials[0]
     f.close()
 
     #read patterns from disk
@@ -215,8 +221,77 @@ def method_1(pos_input,neg_input,pat_input,test_input):
         f.write(sen)
     f.close()
 
-    os.system("svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
     os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    
+    # recall
+    print '======== positive cases ========' 
+    print pos_list
+    print '================================'
+    print '========= Final Result ========='
+    f=open('data/libsvm_result.txt')
+    index=1
+    num_pos_pos=0
+    num_predict_pos=0
+    num_predict_neg=0
+    line=f.readline()
+    while line!="":
+        line=line.strip()
+        if line=="1":
+            num_predict_pos+=1
+            if index in pos_list:
+                num_pos_pos+=1
+        else:
+            num_predict_neg+=1
+        index+=1
+        line=f.readline()
+    f.close()
+    print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
+    print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
+    print '================================'
+
+def statistic():
+    current_path=os.getcwd()
+    # get positive index list
+    f=open(current_path+'/data/tagdatapos.dat','r')
+    end_line_num=int(f.readline())
+    f.close()
+
+    f=open(current_path+'/data/QA_subtitle.txt','r')
+    pos_list=[]
+    line=f.readline()
+    while line!="":
+        pos_list.append(int(line))
+        line=f.readline()
+        line=f.readline()
+        line=f.readline()
+    f.close()
+
+    # accuracy and recall
+    print '======== positive cases ========' 
+    print pos_list
+    print '================================'
+    print '========= Final Result ========='
+    f=open('data/libsvm_result.txt')
+    index=1
+    num_pos_pos=0
+    num_predict_pos=0
+    num_predict_neg=0
+    line=f.readline()
+    while line!="":
+        line=line.strip()
+        if line=="1":
+            num_predict_pos+=1
+            if index in pos_list:
+                num_pos_pos+=1
+        else:
+            num_predict_neg+=1
+        index+=1
+        line=f.readline()
+    f.close()
+    print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
+    print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
+    print '================================'
 
 if __name__=="__main__":
     
@@ -233,6 +308,8 @@ if __name__=="__main__":
         method_0(args.pos_input,args.neg_input)
     elif args.method=="1":
         method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input)
+    elif args.method=="-1":
+        statistic()
 
     
 
