@@ -59,7 +59,8 @@ def mine_patterns(input,output,method,minsup,minlen):
         while line!="":
             seq=[]
             line_split=line.split(' ')
-            if (len(line_split)-2)/2>=minlen:
+            if True:
+            #if (len(line_split)-2)/2>=minlen:
                 for word in line_split:
                     if word=='':
                         break

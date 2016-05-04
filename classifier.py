@@ -221,7 +221,8 @@ def method_1(pos_input,neg_input,pat_input,test_input):
         f.write(sen)
     f.close()
 
-    os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
+    # os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system("svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
     os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
     
     # recall
