@@ -8,10 +8,10 @@ import os
 
 
 
-def mine_patterns(input,output,method,minsup,minlen):
-    # This function will produce a temporary file to contain the transfered sequence 
+def mine_patterns(input,output,method,minsup,ispercent,minlen):
+    # This function will produce a temporary file to contain the transfered sequence
     # .eg only contains number(>=1)
-    
+
     tmp_ifile_name='data/tmp_input.txt' # used for spmf input
     tmp_ofile_name='data/tmp_output.txt' # used for spmf output
 
@@ -46,9 +46,17 @@ def mine_patterns(input,output,method,minsup,minlen):
         print tmp_str
     num_seq_file.close()
 
+    # change the absolute value of minsup into percent
+    percent_minsup=float(minsup)
+    absolute_minsup=0 # to eliminate the bias of this change
+    if ispercent==False:
+        absolute_minsup=int(minsup)
+        percent_minsup=float(minsup)/float(len(tagged_sen_db))
+
+
     # call the spmf using command-line
     print '[Start] call spmf'
-    os.system('java -jar spmf.jar run %s %s %s %s' %(method,tmp_ifile_name,tmp_ofile_name,minsup))
+    os.system('java -jar spmf.jar run %s %s %s %s' %(method,tmp_ifile_name,tmp_ofile_name,str(percent_minsup)))
     print '[Finish] call spmf'
 
     # convert the number sequence back to the tag sequence
@@ -59,10 +67,9 @@ def mine_patterns(input,output,method,minsup,minlen):
         while line!="":
             seq=[]
             line_split=line.split(' ')
-            if True:
-            #if (len(line_split)-2)/2>=minlen:
+            if (len(line_split)-2)/2>=minlen:
                 for word in line_split:
-                    if word=='':
+                    if word=='' or word=="#SUP:":
                         break
                     else:
                         index=int(word)
@@ -82,7 +89,72 @@ def mine_patterns(input,output,method,minsup,minlen):
 
     for pat in patterns:
         print pat
+    print percent_minsup
     # write the sequence to the output
+    print '[Done]There are '+str(len(patterns))+' patterns have been found.'
+    f=open(current_path+'/data/'+output,'w')
+    f.write(json.dumps(patterns))
+    f.close()
+
+def prefixspan(db,minsup):
+    results = []
+
+    def mine_rec(patt, mdb):
+        def localOccurs(mdb):
+            occurs = defaultdict(list)
+
+            for (i, stoppos) in mdb:
+                seq = db[i]
+                for j in xrange(stoppos, len(seq)):
+                    l = occurs[seq[j]]
+                    if len(l) == 0 or l[-1][0] != i:
+                        l.append((i, j + 1))
+
+            return occurs
+
+        for (c, newmdb) in localOccurs(mdb).items():
+            newsup = len(newmdb)
+
+            if newsup >= minsup:
+                newpatt = patt + [c]
+
+                results.append((newpatt, [i for (i, stoppos) in newmdb]))
+                mine_rec(newpatt, newmdb)
+
+    mine_rec([], [(i, 0) for i in xrange(len(db))])
+    return results
+
+
+
+def prefixspan_old(input,output,minsup,ispercent,minlen):
+    tmp_str=''
+    current_path=os.getcwd()
+    f=open(current_path+'/data/'+input,'r')
+    tmp_str=f.readline()
+    sen_db=json.loads(tmp_str)
+    tmp_str=f.readline()
+    tagged_sen_db=json.loads(tmp_str)
+    f.close()
+
+    #get the absolute minsup
+    absolute_minsup=1
+    if ispercent==True:
+        absolute_minsup=int(minsup*len(sen_db)/100)
+    else:
+        absolute_minsup=int(minsup)
+
+    #check minimal support value
+    if absolute_minsup<=0 or absolute_minsup>len(sen_db):
+        print '[Error]The minsup is out of legal range!'
+        return
+
+    #begin mine
+    patterns=[]
+    for (pat,index) in prefixspan(tagged_sen_db,absolute_minsup):
+        if len(pat)>=minlen:
+            patterns.append(pat)
+    for pat in patterns:
+        print pat
     print '[Done]There are '+str(len(patterns))+' patterns have been found.'
     f=open(current_path+'/data/'+output,'w')
     f.write(json.dumps(patterns))
@@ -91,16 +163,17 @@ def mine_patterns(input,output,method,minsup,minlen):
 if __name__=='__main__':
     #parse the arguments
     parser=argparse.ArgumentParser()
-    parser.add_argument("--input",help="the input file name,default=tagged_GoodQA.dat",default='tagged_GoodQA.dat')
+    parser.add_argument("--input",help="the input file name,default=tagged_GoodQA_Question.dat",default='tagged_GoodQA_Question.dat')
     parser.add_argument("--output",help="the output file name ,default=patterns.dat",default='patterns.dat')
-    parser.add_argument("--method",type=str,help="method for mining sequence pattern, prefixspan, MaxSP, multiple_prefixspan",default='prefixspan')
+    parser.add_argument("--method",type=str,help="method for mining sequence pattern, PrefixSpan, MaxSP, prefixspan_old",default='PrefixSpan')
     parser.add_argument("--minsup",help="the minimal support for mining,default=3",default="5%")
     parser.add_argument("--ispercent",help="indict the minsup value is percentage",action='store_true')
     parser.add_argument("--minlen",type=int,help="the minimal length for mining patterns,default=0",default=0)
-    parser.add_argument("--alpha",type=float,help="the parameter for multipleminsup mode",default=0.1)
     args=parser.parse_args()
-    
-    if args.method=='prefixspan':
-        mine_patterns(args.input,args.output,args.method,args.minsup,args.minlen)
+
+    if args.method=='PrefixSpan':
+        mine_patterns(args.input,args.output,args.method,args.minsup,args.ispercent,args.minlen)
     elif args.method=='MaxSP':
-        mine_patterns(args.input,args.output,args.method,args.minsup,args.minlen)
+        mine_patterns(args.input,args.output,args.method,args.minsup,args.ispercent,args.minlen)
+    elif args.method=='prefixspan_old':
+        prefixspan_old(args.input,args.output,args.minsup,args.ispercent,args.minlen)

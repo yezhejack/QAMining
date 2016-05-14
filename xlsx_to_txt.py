@@ -6,6 +6,7 @@ import json
 # This is a temporary tool to convert xlsx to txt
 
 if __name__=="__main__":
+    uri_base="http://127.0.0.1:12345/ltp"
     wb=load_workbook(filename="data/1500.xlsx",read_only=True)
     sheet_name=wb.get_sheet_names()[0]
     print sheet_name
@@ -49,11 +50,11 @@ if __name__=="__main__":
                 if row[1].value:
                     q=row[1].value.encode('utf8')
                     question.append(q)
-                    seg_question.append(segment_sentence(q,"","local"))
+                    seg_question.append(segment_sentence(q,uri_base))
                 if row[2].value:
                     a=row[2].value.encode('utf8')
                     ans.append(a)
-                    seg_ans.append(segment_sentence(q,"","local"))
+                    seg_ans.append(segment_sentence(q,uri_base))
         index+=1
 
     fout.write(json.dumps(pos_sen_db))
@@ -66,7 +67,7 @@ if __name__=="__main__":
     line=input_file.readline()
     while line!="":
         sen_db.append(line.strip())
-        seg_sen_db.append(segment_sentence(line.strip(),"","local"))
+        seg_sen_db.append(segment_sentence(line.strip(),uri_base))
         line=input_file.readline()
 
     index=1

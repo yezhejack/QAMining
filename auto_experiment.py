@@ -4,17 +4,16 @@ from pattern_mine import *
 import find_dialogue
 import evaluation
 from classifier import *
-from 
 
 def auto_experiment(MAX_minsup,MIN_minsup,sup_gap,MAX_minlen,MIN_minlen,len_gap):
     #open the file to store the results of the experiment
     output_file=open("data/evaluation_MAXminsup%d_MINminsup%d_supgap%d_MAXminlen%d_MINminlen%d_lengap%d.txt" %(MAX_minsup,MIN_minsup,sup_gap,MAX_minlen,MIN_minlen,len_gap),"w")
-    
+
     sup=MIN_minsup
     while sup<=MAX_minsup:
         length=MIN_minlen
         while length<=MAX_minlen:
-            mine_patterns("tagged_GoodQA.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),'MaxSP',sup,length)
+            prefixspan_old("tagged_GoodQA_Question.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),sup,False,length)
             find_dialogue.find("tagged_subtitle.dat","patterns_minsup%d_minlen%d.dat" %(sup,length),"dialogues_minsup%d_minlen%d.txt" %(sup,length))
             (minimal_precision,precision,recall)=evaluation.evaluate("dialogues_minsup%d_minlen%d.txt" %(sup,length),"QA_subtitle.txt","tagdatapos.dat")
             output_file.write("\n")
@@ -23,7 +22,7 @@ def auto_experiment(MAX_minsup,MIN_minsup,sup_gap,MAX_minlen,MIN_minlen,len_gap)
             output_file.write('minimal_precision='+str(minimal_precision)+'\n')
             output_file.write('precision='+str(precision)+'\n')
             output_file.write('recall='+str(recall)+'\n')
-            length=length+len_gap        
+            length=length+len_gap
         sup=sup+sup_gap
 
     #close the file
@@ -32,7 +31,7 @@ def auto_experiment(MAX_minsup,MIN_minsup,sup_gap,MAX_minlen,MIN_minlen,len_gap)
 if __name__=="__main__":
     #input parameters
     parser=argparse.ArgumentParser()
-    parser.add_argument("--method",type=int,help="1: 简单问句匹配算法\n2:直接SVM算法\n3:空缺\n4:基于序列模式和SVM的方法")
+    parser.add_argument("--method",type=int,help="1: 简单问句匹配算法\n2:直接SVM算法\n3:空缺\n4:基于序列模式和SVM的方法",default=1)
     parser.add_argument("--MAXminsup",type=int,help="the maximal <minimal support>",default=100)
     parser.add_argument("--MINminsup",type=int,help="the minimal <minimal support>",default=30)
     parser.add_argument("--supgap",type=int,help="the step from minimal <minimal support> toward maximal <minimal support>",default=10)
@@ -48,4 +47,4 @@ if __name__=="__main__":
         pass
     elif args.method==4:
         print '[基于序列模式和SVM的方法]'
-        
+
