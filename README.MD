@@ -1,29 +1,29 @@
-# Mining Question-Answer pairs from texts and subtitles #
+# Mining dialogues from texts and subtitles #
 
 ## Introduction ##
-The function `prefixspan` in `pattern_mine.py` is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan
+The method `prefixspan_old` in `pattern_mine.py` is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan. __`SPMF` will take place of it.
 
-The version after `1.0.0` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
+The version after `` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
 
 ## ChangeLog ##
 
-* `Version 1.0.0` only use simple strategy to match patterns
-* `Version 1.0.1` using machine learning methods to imporve the performance. 
+* `Version 0.0.1` only use simple strategy to match patterns
+* `Version 0.0.2` using machine learning methods to imporve the performance. 
 
 ## directory and file explain ##
 
 * __auto_experiment.py__
-  * test automatically
+  * test automatically with simple startegy.
 * __classifier.py__
-  * using the libsvm to determine a sentences pair whether is a dialogue
+  * using the `libsvm` to determine a sentences pair whether is a dialogue
 * __evaluation.py__
-  * evaluate the mine result
+  * evaluate the mine performance.
 * __extract_keywords.py__
   * get the top-k keywords in the training data
 * __find_dialogue.py__
   * provide interface to find the dialogue matched a pattern
 * __ltpprocess.py__
-  * provide interface to call ltp-cloud
+  * provide interface to call ltp in local method.
 * __main.py__
   * the main body of the system
 * __pattern_mine.py__
@@ -31,12 +31,13 @@ The version after `1.0.0` may not provide support of online ltp-cloud because of
   * This module contains a lot of other mine modules, such as SPFM. 
 * __SubPreprocess.py__
   * process the subtitles
+  * It has some unformal method.
 * __tagdata.py__
   * it's helpful tool to tag the data for training or evaluation
 * __xlsx\_to\_txt.py__
   * generate dialogue from the XunFei xlsx database into plain text
 
-* _/data_ :contains the data used in the project 
+* _/data_ :contains the data used in the project the 
 	* __GoodQA_Question.dat__
 	  * the questions of good question-answer pairs
 	* __GoodQA_Answer.dat__
@@ -94,7 +95,7 @@ Start Command
 ```
 ./bin/ltp_server --threads 1
 ```
-
+The default url is `127.0.0.1:12345/ltp`
 
 ### Example:simple strategy ###
 1. A plain subtitles file is needed. Every line is a sentence. It is named after 'subtitle.dat'
@@ -116,7 +117,8 @@ Start Command
   ```
   python find_dialogue -o dialogues_minsup30_minlen_10.txt
   ```
-  
+The most accurate help documentation is in 'python xxxx.py -h'
+
 #### faster experiment tool ####
 Instead of running main.py, we can call the python script one by one to mine dialogue. It's a good way to take our time to adjust model and some modules. Every module provide input and output file configurations. For example, we can run the ltpprocess.py only once to tag the sentence for the same sentence data. We store the result in the disk, so we can test many ways to mine sequence patterns without extra running of ltpprocess.py.
 
@@ -192,13 +194,16 @@ This module uses machine learning methods to detect the dialogues.It has two met
 minsup can be the absolute format or the percentage format. For example, if you want to mine the patterns have a minimal support value 20.
 
 ```
-python pattern_mine.py --minsup 20 --method prefixspan
+python pattern_mine.py --minsup 20 --method prefixspan_old
 ```
 If you want it to be 20%.
 
 ```
-python pattern_mine.py --minsup 20 --ispercent --method prefixspan
+python pattern_mine.py --minsup 20 --ispercent --method prefixspan_old
 ```
+
+You can replace the `prefixspan_old` with `PrefixSpan`. It will use `SPMF` and provide faster speed.
+
 The value of minisup can be float. But if there is no 'ispercent' followed, the float value will be cut into an integer value.
 
 #### recommended usage ####
@@ -218,3 +223,4 @@ The parameter of `--minsup` should be adjusted to produce a proper quantity of p
 * .dat means the mid-step input and output
 * .txt means the input and output of the whols system
 * .tmp means the temporary file which will be deleted after the tasks
+* tagged_*.dat is output of ltpprocess.py  
