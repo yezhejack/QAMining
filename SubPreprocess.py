@@ -4,7 +4,43 @@
 #Date:2015.11.22
 #By YE Zhe
 import os.path
+import chardet
 
+def ReadSubFiles(p):
+    print p
+    result=[]
+    list_dirs=os.walk(p)
+    srt_files_path=[]
+    for root,dirs,files in list_dirs:
+        for f in files:
+            print f
+            if os.path.splitext(f)[1]=='.srt':
+                srt_files_path.append(os.path.join(root,f))
+
+    for f in srt_files_path:
+        print f
+        input_f=open(f)
+        code=chardet.detect(input_f.read())
+        input_f.close()
+        print code
+        input_f=open(f)
+        line=input_f.readline()
+        while line!="":
+            try:
+                if code['encoding'].find('utf') ==-1 and code['encoding'].find('UTF')==-1:
+                    line=line.decode(code['encoding'])
+                if line.find('-->')!=-1:
+                    line=input_f.readline().strip()
+                    if code['encoding'].find('utf') ==-1 and code['encoding'].find('UTF')==-1:
+                        line=line.decode(code['encoding'])
+                    print line
+                    result.append(line)
+            except:
+                print "There is something wrong with decode."
+            line=input_f.readline()
+        input_f.close()
+        print f
+    return result  
 
 def CleanSubFiles(p):
     print p
@@ -26,7 +62,8 @@ def CleanSubFiles(p):
             if line.find('-->')!=-1:
                 line=ConvertToUTF8(input_f.readline())
                 print line
-                result.append(line)
+                if line!="":
+                    result.append(line)
             line=input_f.readline()
         input_f.close()
     return result
@@ -40,7 +77,11 @@ def ConvertToUTF8(str):
             print 'not gb2312'
             result=str.decode('GBK')
         finally:
-            result=result.encode('UTF-8')
+            try:
+                result=result.encode('UTF-8')
+            except BaseException,e:
+                print e
+                return ""
     return result
 
 # in some cases, a srt file would put two sentence in a line
@@ -99,3 +140,6 @@ def SubToDialogues(input_path,output_path):
         second_str=input_file.readline()
     input_file.close()
     output_file.close()
+
+if __name__=="__main__":
+    ReadSubFiles('data/produce')
