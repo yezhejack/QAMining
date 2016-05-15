@@ -10,6 +10,13 @@ The version after `` may not provide support of online ltp-cloud because of its 
 * `Version 0.0.1` only use simple strategy to match patterns
 * `Version 0.0.2` using machine learning methods to imporve the performance. 
 
+## Miner ##
+
+1. put the .srt files in data/produce
+2. run ltp in ```127.0.0.1:12345/ltp```
+3. ```python Miner.py```
+4. the result is in data/dialogues.txt
+
 ## directory and file explain ##
 
 * __auto_experiment.py__
