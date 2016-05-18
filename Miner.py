@@ -1,5 +1,5 @@
 # coding:utf-8
-# the formal miner for dialogues v0.1.0 
+# the formal miner for dialogues v0.1.0
 from SubPreprocess import *
 from ltpprocess import *
 from find_dialogue import *

@@ -125,6 +125,7 @@ def tagger(input,output,tags,uri_base,maxlen,tag_type):
             if len(sentence)<=maxlen:
                 sen_db.append(sentence)
                 tagged_sen_db.append(tagsentence(sentence,uri_base,tags))
+                print sen_db[-1]
                 print tagged_sen_db[-1]
             sentence=input_file.readline().strip()
         print tagged_sen_db

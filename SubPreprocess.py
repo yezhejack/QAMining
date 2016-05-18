@@ -34,8 +34,10 @@ def ReadSubFiles(p):
                     if code['encoding'].find('utf') ==-1 and code['encoding'].find('UTF')==-1:
                         line=line.decode(code['encoding'])
                     print line
-                    result.append(line)
-            except:
+                    if line!="":
+                        result.append(line)
+            except BaseException,e:
+                print e
                 print "There is something wrong with decode."
             line=input_f.readline()
         input_f.close()
@@ -142,4 +144,20 @@ def SubToDialogues(input_path,output_path):
     output_file.close()
 
 if __name__=="__main__":
-    ReadSubFiles('data/produce')
+    index=1;
+    output_file=open('data/benben_dialogues.txt','w')
+    for i in range(1,8):
+        file_name="benben_dialogues_"+str(i)+".txt"
+        f=open("data/"+file_name,'r')
+        line=f.readline()
+        while line!="":
+            output_file.write(str(index)+'\n')
+            line=f.readline().strip()
+            output_file.write(line+'\n')
+            line=f.readline().strip()
+            output_file.write(line+'\n')
+            line=f.readline()
+            line=f.readline()
+            index+=1
+        f.close()
+    output_file.close()
