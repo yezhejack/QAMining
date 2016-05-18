@@ -2,3 +2,6 @@
 .DS_Store
 *.key
 dialogue*.txt
+data/*.dat
+data/allsubtitles/*
+data/*tmp*

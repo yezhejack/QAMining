@@ -10,6 +10,12 @@ The version after `` may not provide support of online ltp-cloud because of its 
 * `Version 0.0.1` only use simple strategy to match patterns
 * `Version 0.0.2` using machine learning methods to imporve the performance. 
 
+## Dependencies ##
+* openpyxl
+* chardet
+* xml
+* ltp
+
 ## Miner ##
 
 1. put the .srt files in data/produce
@@ -41,7 +47,7 @@ The version after `` may not provide support of online ltp-cloud because of its 
   * It has some unformal method.
 * __tagdata.py__
   * it's helpful tool to tag the data for training or evaluation
-* __xlsx\_to\_txt.py__
+* __ReadXunFei.py__
   * generate dialogue from the XunFei xlsx database into plain text
 
 * _/data_ :contains the data used in the project the 
@@ -100,7 +106,7 @@ Version 3.0.0 has the memory leak problem.
 Start Command
 
 ```
-./bin/ltp_server --threads 1
+./bin/ltp_server --threads 4
 ```
 The default url is `127.0.0.1:12345/ltp`
 
@@ -159,7 +165,7 @@ It has three tag type:
 
 3. It is used for tagging a subtitile file. It assume every two close lines as a dialogues. And then tag them. For example,there are 1000 lines in a subtitle, it will produce 999 dialuges.
 
-### xlsx\_to\_txt.py ###
+### ReadXunFei.py ###
 This module's name is weird. But its main goal is to construct positive cases and negative cases.
 
 It doesn't provide choice for input file name. Two input files are needed. 
@@ -194,6 +200,9 @@ This module uses machine learning methods to detect the dialogues.It has two met
 
 1. directly input the tagged_sentence without keywords to train a svm
 2. combine patterns to train a svm
+
+### Miner.py ###
+It's a dialogues miner base on simple strategy.
 
 ## usage ##
 
