@@ -38,7 +38,7 @@ if __name__=='__main__':
     while sentence!='':
         sen_db.append(sentence)
         sentence=input_file.readline()
-
+    # here is a bug: the standard subtitile's index = subtitile index+1
     for i in range(last_index+1,len(sen_db)-1):
         print '*********************************************'
         print 'No.'+str(i)

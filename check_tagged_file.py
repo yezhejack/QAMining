@@ -17,12 +17,12 @@ if __name__=="__main__":
     f.close()
 
     for i in range(len(db)):
-    	print '[index=%d]' % (i)
-    	print db[i]
+    	print '[index=%d]' % (i+1)
+    	print db[i].strip()
     	seq=""
     	for x in tagged_db[i]:
     		seq+="["+x+"]"
-    	print seq
+    	print seq+'\n'
 
     print 'db length= %d' % (len(db))
     print 'tagged_db length= %d' % (len(tagged_db))

@@ -3,7 +3,8 @@ from openpyxl import load_workbook
 from SubPreprocess import *
 from ltpprocess import *
 import json
-# This is a temporary tool to convert xlsx to txt
+# This is a temporary tool to convert XunFei Dialogues Database 
+# 1500.xlsx to txt
 
 if __name__=="__main__":
     uri_base="http://127.0.0.1:12345/ltp"

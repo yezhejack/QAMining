@@ -3,9 +3,10 @@
 # this code is used for clean the train data
 import argparse
 import os
-if __name__=="__main__":
-    current_path=os.getcwd()
+def CleanSubtitle(input,output):
     
+if __name__=="__main__":
+    current_path=os.getcwd()  
     #arguments parser
     parser=argparse.ArgumentParser()
     parser.add_argument("--input",help="the path of train data file,default=data/GoodQA_Answer.txt",default="data/GoodQA_Answer.txt")

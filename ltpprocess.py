@@ -1,4 +1,4 @@
- #coding:utf-8
+#coding:utf-8
 #this code provide the interface to use ltp-cloud platform from SCIR
 #and provide independent script for calling ltp
 import urllib2,urllib

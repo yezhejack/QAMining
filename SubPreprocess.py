@@ -6,6 +6,7 @@
 import os.path
 import chardet
 
+# Read all .srt files in 'p' directory and put all of it into list.
 def ReadSubFiles(p):
     print p
     result=[]
@@ -44,6 +45,7 @@ def ReadSubFiles(p):
         print f
     return result  
 
+# It's better to use ReadSubFiles beacuse it can fit more coding format.
 def CleanSubFiles(p):
     print p
     result=[]
@@ -144,6 +146,7 @@ def SubToDialogues(input_path,output_path):
     output_file.close()
 
 if __name__=="__main__":
+    # test
     index=1;
     output_file=open('data/benben_dialogues.txt','w')
     for i in range(1,8):
