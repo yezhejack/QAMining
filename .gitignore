@@ -1,7 +1,9 @@
 *.pyc
 .DS_Store
 *.key
-dialogue*.txt
-data/*.dat
 data/allsubtitles/*
+data/produce/*
 data/*tmp*
+libsvm-3.21/tools/*tmp*
+data/*.dat
+*.result

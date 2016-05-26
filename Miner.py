@@ -17,4 +17,4 @@ if __name__=="__main__":
     tagger("subtitle_test.txt","tagged_subtitle_test.dat",['pos','relate'],"http://127.0.0.1:12345/ltp",99999,1)
 
     # find dialogues
-    find("tagged_subtitle_test.dat","patterns.dat","dialogues.txt","1")
+    find("tagged_subtitle_test.dat","patterns_Miner.dat","dialogues.txt","1")

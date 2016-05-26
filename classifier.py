@@ -89,7 +89,7 @@ def method_0(pos_input,neg_input):
         f.write(sen)
     f.close()
 
-    os.system("svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system("libsvm-3.21/svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
 
     # turn the test data into vectors
     f=open(current_path+'/data/tagdatapos.dat','r')
@@ -142,7 +142,7 @@ def method_0(pos_input,neg_input):
         f.write(sen)
     f.close()
 
-    os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
 
 
 def method_1(pos_input,neg_input,pat_input,test_input):
@@ -228,8 +228,8 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     f.close()
 
     # os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system("svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system("libsvm-3.21/svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
 
     # recall
     print '======== positive cases ========'
@@ -337,8 +337,8 @@ def method_2(pos_input,neg_input,pat_input,test_input):
     f.close()
 
     # os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system("svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system('svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system("libsvm-3.21/svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
 
     # recall
     print '======== positive cases ========'

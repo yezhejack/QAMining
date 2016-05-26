@@ -3,7 +3,7 @@
 ## Introduction ##
 The method `prefixspan_old` in `pattern_mine.py` is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan. __`SPMF` will take place of it.
 
-The version after `` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
+The version after `0.0.1` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
 
 ## ChangeLog ##
 
