@@ -1,7 +1,6 @@
 # Mining dialogues from texts and subtitles #
 
 ## Introduction ##
-The method `prefixspan_old` in `pattern_mine.py` is modified from https://github.com/chuanconggao/PrefixSpan-py by putting it in a module called prefixspan. __`SPMF` will take place of it.
 
 The version after `0.0.1` may not provide support of online ltp-cloud because of its lack of speed.And I will give up the prefixspan from others open source except SPMF.
 
@@ -9,6 +8,7 @@ The version after `0.0.1` may not provide support of online ltp-cloud because of
 
 * `Version 0.0.1` only use simple strategy to match patterns
 * `Version 0.0.2` using machine learning methods to imporve the performance. 
+* `Version 0.1.1` add multiple process method to train svm classifier
 
 ## Dependencies ##
 * openpyxl
@@ -132,11 +132,37 @@ The default url is `127.0.0.1:12345/ltp`
   ```
 The most accurate help documentation is in 'python xxxx.py -h'
 
-#### faster experiment tool ####
+#### Faster experiment tool ####
 Instead of running main.py, we can call the python script one by one to mine dialogue. It's a good way to take our time to adjust model and some modules. Every module provide input and output file configurations. For example, we can run the ltpprocess.py only once to tag the sentence for the same sentence data. We store the result in the disk, so we can test many ways to mine sequence patterns without extra running of ltpprocess.py.
 
 ### Example:using machine learning method ###
-to be finished........
+1. Prodcue tagged file using ltpprocess. I produce a few modes to change a sentence into a sequence.
+  
+  ```
+  python ltpprocess.py --input dialogues_positive_simple.txt --output tagged_dialogues_positive_simple_5.dat --tag_type 5
+  python ltpprocess.py --input dialogues_negative_simple.txt --output tagged_dialogues_negative_simple_5.dat --tag_type 5
+  python ltpprocess.py --input subtitle.dat --output tagged_subtitle_2.dat --tag_type 2
+  ```
+  These codes will produce three tagged files. `tagged_dialogues_positive_simple_5.dat` and `tagged_dialogues_negative_simple_5.dat` are for training. `tagged_subtitle_2.dat` is for test.
+
+2. Mine patterns
+
+  ```
+  python pattern_mine.py --input tagged_dialogues_positive_simple_5.dat --output patterns_1044.dat --method PrefixSpan --ispercent --minsup 0.1044
+  ```
+3. Train classifier and test
+  
+  ```
+  python classifier.py --pos_input tagged_dialogues_positive_simple_5.dat --neg_input tagged_dialogues_negative_simple_5.dat --pat_input patterns_1044.dat --test_input tagged_subtitle_2.dat --
+    method 1
+  ```
+  It's very important tha the `pat_input` should be matched with the `output` of `pattern_mine.py`.
+
+4. Using multiple process to find good parameters
+  
+  As we see, there are a lot of parameters to be decided. So we have to run the code many times to see which group of parameters is better.
+  
+  You can create a `.sh` file in root of the project. For example I want to compare many results which come from different value of minsup. So I can fork a process for a value. It's simple.
 
 ## Details ##
 

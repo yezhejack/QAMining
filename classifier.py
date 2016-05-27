@@ -8,10 +8,17 @@
 import os
 import argparse
 import json
+import fcntl
 from find_dialogue import *
 
-def method_0(pos_input,neg_input):
+def method_0(pos_input,neg_input,is_queit,result_output):
     current_path=os.getcwd()
+    pid=str(os.getpid())
+    tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
+    tmp_test_file_name='/tmp/libsvm/test_%s' % (pid)
+    tmp_result_file_name='/tmp/libsvm/result_%s' % (pid)
+    tmp_model_file_name='/tmp/libsvm/model_%s' % (pid)
+    
     # read positive input
     f=open(current_path+'/data/'+pos_input,'r')
     f.readline()
@@ -29,7 +36,7 @@ def method_0(pos_input,neg_input):
     f.close()
 
     # turn the data into vectors and output the result into libsvm_train.dat
-    f=open(current_path+'/data/libsvm_train.tmp','w')
+    f=open(tmp_train_file_name,'w')
     tag_index_dict={}
     counter=0
     for pat in pos_patterns:
@@ -89,7 +96,7 @@ def method_0(pos_input,neg_input):
         f.write(sen)
     f.close()
 
-    os.system("libsvm-3.21/svm-train -t 0 data/libsvm_train.tmp data/libsvm_model.tmp")
+    os.system("libsvm-3.21/svm-train -t 0 %s %s" % (tmp_train_file_name,tmp_model_file_name))
 
     # turn the test data into vectors
     f=open(current_path+'/data/tagdatapos.dat','r')
@@ -114,7 +121,7 @@ def method_0(pos_input,neg_input):
         line=f.readline()
     f.close()
 
-    f=open(current_path+'/data/libsvm_test.tmp','w')
+    f=open(tmp_test_file_name,'w')
     for i in range(0,end_line_num):
         if i in pos_list:
             sen="1"
@@ -142,11 +149,17 @@ def method_0(pos_input,neg_input):
         f.write(sen)
     f.close()
 
-    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system('libsvm-3.21/svm-predict %s %s %s' % (tmp_test_file_name,tmp_model_file_name,tmp_result_file_name))
 
 
-def method_1(pos_input,neg_input,pat_input,test_input):
-    current_path=os.getcwd()
+def method_1(pos_input,neg_input,pat_input,test_input,is_quiet,result_output):
+    current_path=os.getcwd()    
+    pid=str(os.getpid())
+    tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
+    tmp_test_file_name='/tmp/libsvm/test_%s' % (pid)
+    tmp_result_file_name='/tmp/libsvm/result_%s' % (pid)
+    tmp_model_file_name='/tmp/libsvm/model_%s' % (pid)
+
     # read positive input
     f=open(current_path+'/data/'+pos_input,'r')
     tmp_str=f.readline()
@@ -173,7 +186,7 @@ def method_1(pos_input,neg_input,pat_input,test_input):
         print seq
     f.close()
 
-    f=open(current_path+'/data/libsvm_train.tmp','w')
+    f=open(tmp_train_file_name,'w')
     for dial in pos_dials:
         sen="1"
         for i in range(1,len(patterns)+1):
@@ -208,12 +221,12 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     f.close()
 
     #sentence database and tagged dialogues database from disk
-    f=open(current_path+'/data/'+test_input)
+    f=open(current_path+'/data/'+test_input,'r')
     sen_db=json.loads(f.readline())
     tagged_dial_db=json.loads(f.readline())
     f.close()
 
-    f=open(current_path+'/data/libsvm_test.tmp','w')
+    f=open(tmp_test_file_name,'w')
     for i in range(0,end_line_num):
         if i in pos_list:
             sen="1"
@@ -228,15 +241,15 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     f.close()
 
     # os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system("libsvm-3.21/svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system("libsvm-3.21/svm-train %s %s" % (tmp_train_file_name,tmp_model_file_name))
+    os.system('libsvm-3.21/svm-predict %s %s %s' % (tmp_test_file_name,tmp_model_file_name,tmp_result_file_name))
 
     # recall
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    print '========= Final Result ========='
-    f=open('data/libsvm_result.txt')
+    
+    f=open(tmp_result_file_name,'r')
     index=0
     num_pos_pos=0
     num_predict_pos=0
@@ -245,9 +258,10 @@ def method_1(pos_input,neg_input,pat_input,test_input):
     while line!="":
         line=line.strip()
         if line=="1":
-            print "index=%d" % (index)
-            print sen_db[index]
-            print tagged_dial_db[index]
+            if not is_quiet:
+                print "index=%d" % (index)
+                print sen_db[index]
+                print tagged_dial_db[index]
             num_predict_pos+=1
             if index in pos_list:
                 num_pos_pos+=1
@@ -256,12 +270,37 @@ def method_1(pos_input,neg_input,pat_input,test_input):
         index+=1
         line=f.readline()
     f.close()
-    print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
-    print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
-    print '================================'
+    
+    
+    res='========= Final Result =========\n'
+    res+='pid is %s\n' % (pid)
+    res+='patterns file name : %s\n' % (pat_input)
+    if num_predict_pos>0:
+        res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
+    else:
+        res+='accuracy = 0\n'
+    if len(pos_len)>0:
+        res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
+    else:
+        res+='recall = 0\n'
+    res+='================================\n'
+    f=open(result_output,'a')
+    fcntl.flock(f.fileno,fcntl.LOCK_EX)
+    print res
+    f.write(res)
+    f.flush()
+    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    f.close()
 
-def method_2(pos_input,neg_input,pat_input,test_input):
+
+def method_2(pos_input,neg_input,pat_input,test_input,result_output):
     current_path=os.getcwd()
+    pid=str(os.getpid())
+    tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
+    tmp_test_file_name='/tmp/libsvm/test_%s' % (pid)
+    tmp_result_file_name='/tmp/libsvm/result_%s' % (pid)
+    tmp_model_file_name='/tmp/libsvm/model_%s' % (pid)
+
     # read positive input
     f=open(current_path+'/data/'+pos_input,'r')
     tmp_str=f.readline()
@@ -282,7 +321,7 @@ def method_2(pos_input,neg_input,pat_input,test_input):
     patterns=json.loads(tmp_str)
     f.close()
 
-    f=open(current_path+'/data/libsvm_train.tmp','w')
+    f=open(tmp_train_file_name,'w')
     for dial in pos_dials:
         sen="1"
         for i in range(1,len(patterns)+1):
@@ -322,7 +361,7 @@ def method_2(pos_input,neg_input,pat_input,test_input):
     tagged_dial_db=json.loads(f.readline())
     f.close()
 
-    f=open(current_path+'/data/libsvm_test.tmp','w')
+    f=open(tmp_test_file_name,'w')
     for i in range(0,end_line_num):
         if i+1 in pos_list:
             sen="1"
@@ -337,15 +376,15 @@ def method_2(pos_input,neg_input,pat_input,test_input):
     f.close()
 
     # os.system("svm-train -c 512 -g 0.0001220703125 data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system("libsvm-3.21/svm-train data/libsvm_train.tmp data/libsvm_model.tmp")
-    os.system('libsvm-3.21/svm-predict data/libsvm_test.tmp data/libsvm_model.tmp data/libsvm_result.txt')
+    os.system("libsvm-3.21/svm-train %s %s" % (tmp_train_file_name,tmp_test_file_name))
+    os.system('libsvm-3.21/svm-predict %s %s %s' % (tmp_test_file_name,tmp_model_file_name,tmp_result_file_name))
 
     # recall
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    print '========= Final Result ========='
-    f=open('data/libsvm_result.txt')
+    
+    f=open(tmp_result_file_name,'r')
     index=0
     num_pos_pos=0
     num_predict_pos=0
@@ -362,9 +401,28 @@ def method_2(pos_input,neg_input,pat_input,test_input):
         index+=1
         line=f.readline()
     f.close()
-    print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
-    print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
-    print '================================'
+
+    
+    res='========= Final Result =========\n'
+    res+='pid is %s\n' % (pid)
+    res+='patterns file name : %s\n' % (pat_input)
+    if num_predict_pos>0:
+        res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
+    else:
+        res+='accuracy = 0\n'
+    if len(pos_len)>0:
+        res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
+    else:
+        res+='recall = 0\n'
+    res+='================================\n'
+    f=open(result_output,'w')
+    fcntl.flock(f.fileno,fcntl.LOCK_EX)
+    print res 
+    f.write(res)
+    f.flush()
+    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    f.close()
+
 
 def statistic():
     current_path=os.getcwd()
@@ -387,7 +445,7 @@ def statistic():
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    print '========= Final Result ========='
+    
     f=open('data/libsvm_result.txt')
     index=0
     num_pos_pos=0
@@ -405,6 +463,8 @@ def statistic():
         index+=1
         line=f.readline()
     f.close()
+
+    print '========= Final Result ========='
     print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
     print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
     print '================================'
@@ -417,11 +477,13 @@ if __name__=="__main__":
     parser.add_argument('--pat_input',help="the name of pattern file in ./data/,default=patterns.dat",default="patterns.dat")
     parser.add_argument('--test_input',help="the name of test file in ./data/,default=tagged_dialogues_test.dat",default="tagged_dialogues_test.dat")
     parser.add_argument('--method',help='the method name of libsvm\n0-detect the question of dialogues\n1-using pattern to predict\n2-using patterns to detect questions',default='-1')
+    parser.add_argument("-q","--is_queit",help="quiet mode",action='store_true')
+    parser.add_argument("-r","--result",help="the file contains the result, it will be shared with a few processess,default=data/classifier_result.txt",default="classifier_result.txt")
     args=parser.parse_args()
 
     if args.method=="0":
-        method_0(args.pos_input,args.neg_input)
+        method_0(args.pos_input,args.neg_input,args.is_queit,args.result)
     elif args.method=="1":
-        method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input)
+        method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input,args.is_queit,args.result)
     elif args.method=="-1":
         statistic()

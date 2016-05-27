@@ -11,9 +11,9 @@ import os
 def mine_patterns(input,output,method,minsup,ispercent,minlen):
     # This function will produce a temporary file to contain the transfered sequence
     # .eg only contains number(>=1)
-
-    tmp_ifile_name='data/tmp_input.txt' # used for spmf input
-    tmp_ofile_name='data/tmp_output.txt' # used for spmf output
+    pid=str(os.getpid())
+    tmp_ifile_name='/tmp/spmf_input_%s' % (pid) # used for spmf input
+    tmp_ofile_name='/tmp/spmf_output_%s' % (pid) # used for spmf output
 
     # Convert the data train into the SPMF format
     # read tagged sentences
