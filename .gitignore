@@ -7,3 +7,7 @@ data/*tmp*
 libsvm-3.21/tools/*tmp*
 data/*.dat
 *.result
+libsvm-3.21/svm-predict
+libsvm-3.21/svm-train
+libsvm-3.21/svm.o
+
