@@ -8,9 +8,10 @@
 import os
 import argparse
 import json
+import fcntl
 from find_dialogue import *
 
-def method_0(pos_input,neg_input,is_queit):
+def method_0(pos_input,neg_input,is_queit,result_output):
     current_path=os.getcwd()
     pid=str(os.getpid())
     tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
@@ -151,7 +152,7 @@ def method_0(pos_input,neg_input,is_queit):
     os.system('libsvm-3.21/svm-predict %s %s %s' % (tmp_test_file_name,tmp_model_file_name,tmp_result_file_name))
 
 
-def method_1(pos_input,neg_input,pat_input,test_input,is_quiet):
+def method_1(pos_input,neg_input,pat_input,test_input,is_quiet,result_output):
     current_path=os.getcwd()    
     pid=str(os.getpid())
     tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
@@ -270,15 +271,29 @@ def method_1(pos_input,neg_input,pat_input,test_input,is_quiet):
         line=f.readline()
     f.close()
     
-    print '========= Final Result ========='
-    print 'pid is %s' % (pid)
-    print 'patterns file name : %s' % (pat_input)
-    print 'accuracy=%f'%(float(num_pos_pos)/num_predict_pos)
-    print 'recall=%f'%(float(num_pos_pos)/len(pos_list))
-    print '================================'
+    
+    res='========= Final Result =========\n'
+    res+='pid is %s\n' % (pid)
+    res+='patterns file name : %s\n' % (pat_input)
+    if num_predict_pos>0:
+        res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
+    else:
+        res+='accuracy = 0\n'
+    if len(pos_len)>0:
+        res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
+    else:
+        res+='recall = 0\n'
+    res+='================================\n'
+    f=open(result_output,'a')
+    fcntl.flock(f.fileno,fcntl.LOCK_EX)
+    print res
+    f.write(res)
+    f.flush()
+    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    f.close()
 
 
-def method_2(pos_input,neg_input,pat_input,test_input):
+def method_2(pos_input,neg_input,pat_input,test_input,result_output):
     current_path=os.getcwd()
     pid=str(os.getpid())
     tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
@@ -387,18 +402,27 @@ def method_2(pos_input,neg_input,pat_input,test_input):
         line=f.readline()
     f.close()
 
-    print '========= Final Result ========='
-    print 'pid is %s' % (pid)
-    print 'patterns file name : %s' % (pat_input)
+    
+    res='========= Final Result =========\n'
+    res+='pid is %s\n' % (pid)
+    res+='patterns file name : %s\n' % (pat_input)
     if num_predict_pos>0:
-        print 'accuracy = %f' % (float(num_pos_pos)/num_predict_pos)
+        res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
     else:
-        print 'accuracy = 0'
+        res+='accuracy = 0\n'
     if len(pos_len)>0:
-        print 'recall = %f' % (float(num_pos_pos)/len(pos_list))
+        res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
     else:
-        print 'recall = 0'
-    print '================================'
+        res+='recall = 0\n'
+    res+='================================\n'
+    f=open(result_output,'w')
+    fcntl.flock(f.fileno,fcntl.LOCK_EX)
+    print res 
+    f.write(res)
+    f.flush()
+    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    f.close()
+
 
 def statistic():
     current_path=os.getcwd()
@@ -454,11 +478,12 @@ if __name__=="__main__":
     parser.add_argument('--test_input',help="the name of test file in ./data/,default=tagged_dialogues_test.dat",default="tagged_dialogues_test.dat")
     parser.add_argument('--method',help='the method name of libsvm\n0-detect the question of dialogues\n1-using pattern to predict\n2-using patterns to detect questions',default='-1')
     parser.add_argument("-q","--is_queit",help="quiet mode",action='store_true')
+    parser.add_argument("-r","--result",help="the file contains the result, it will be shared with a few processess,default=data/classifier_result.txt",default="classifier_result.txt")
     args=parser.parse_args()
 
     if args.method=="0":
-        method_0(args.pos_input,args.neg_input,args.is_queit)
+        method_0(args.pos_input,args.neg_input,args.is_queit,args.result)
     elif args.method=="1":
-        method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input,args.is_queit)
+        method_1(args.pos_input,args.neg_input,args.pat_input,args.test_input,args.is_queit,args.result)
     elif args.method=="-1":
         statistic()
