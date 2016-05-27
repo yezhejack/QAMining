@@ -18,7 +18,7 @@ def method_0(pos_input,neg_input,is_queit,result_output):
     tmp_test_file_name='/tmp/libsvm/test_%s' % (pid)
     tmp_result_file_name='/tmp/libsvm/result_%s' % (pid)
     tmp_model_file_name='/tmp/libsvm/model_%s' % (pid)
-    
+
     # read positive input
     f=open(current_path+'/data/'+pos_input,'r')
     f.readline()
@@ -153,7 +153,7 @@ def method_0(pos_input,neg_input,is_queit,result_output):
 
 
 def method_1(pos_input,neg_input,pat_input,test_input,is_quiet,result_output):
-    current_path=os.getcwd()    
+    current_path=os.getcwd()
     pid=str(os.getpid())
     tmp_train_file_name='/tmp/libsvm/train_%s' % (pid)
     tmp_test_file_name='/tmp/libsvm/test_%s' % (pid)
@@ -248,7 +248,7 @@ def method_1(pos_input,neg_input,pat_input,test_input,is_quiet,result_output):
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    
+
     f=open(tmp_result_file_name,'r')
     index=0
     num_pos_pos=0
@@ -270,26 +270,28 @@ def method_1(pos_input,neg_input,pat_input,test_input,is_quiet,result_output):
         index+=1
         line=f.readline()
     f.close()
-    
-    
-    res='========= Final Result =========\n'
+
+
+    res='\n========= Final Result =========\n'
     res+='pid is %s\n' % (pid)
     res+='patterns file name : %s\n' % (pat_input)
     if num_predict_pos>0:
         res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
     else:
         res+='accuracy = 0\n'
-    if len(pos_len)>0:
+    if len(pos_list)>0:
         res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
     else:
         res+='recall = 0\n'
     res+='================================\n'
     f=open(result_output,'a')
-    fcntl.flock(f.fileno,fcntl.LOCK_EX)
+    fcntl.flock(f.fileno(),fcntl.LOCK_EX)
     print res
     f.write(res)
     f.flush()
-    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    print "release"
+    fcntl.flock(f.fileno(),fcntl.LOCK_UN)
+    print "release"
     f.close()
 
 
@@ -383,7 +385,7 @@ def method_2(pos_input,neg_input,pat_input,test_input,result_output):
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    
+
     f=open(tmp_result_file_name,'r')
     index=0
     num_pos_pos=0
@@ -402,25 +404,25 @@ def method_2(pos_input,neg_input,pat_input,test_input,result_output):
         line=f.readline()
     f.close()
 
-    
-    res='========= Final Result =========\n'
+
+    res='\n========= Final Result =========\n'
     res+='pid is %s\n' % (pid)
     res+='patterns file name : %s\n' % (pat_input)
     if num_predict_pos>0:
         res+='accuracy = %f\n' % (float(num_pos_pos)/num_predict_pos)
     else:
         res+='accuracy = 0\n'
-    if len(pos_len)>0:
+    if len(pos_list)>0:
         res+='recall = %f\n' % (float(num_pos_pos)/len(pos_list))
     else:
         res+='recall = 0\n'
     res+='================================\n'
-    f=open(result_output,'w')
-    fcntl.flock(f.fileno,fcntl.LOCK_EX)
-    print res 
+    f=open(result_output,'a')
+    fcntl.flock(f.fileno(),fcntl.LOCK_EX)
+    print res
     f.write(res)
     f.flush()
-    fcntl.flock(f.fileno.fcntl.LOCK_UN)
+    fcntl.flock(f.fileno(),fcntl.LOCK_UN)
     f.close()
 
 
@@ -445,7 +447,7 @@ def statistic():
     print '======== positive cases ========'
     print pos_list
     print '================================'
-    
+
     f=open('data/libsvm_result.txt')
     index=0
     num_pos_pos=0
@@ -478,7 +480,7 @@ if __name__=="__main__":
     parser.add_argument('--test_input',help="the name of test file in ./data/,default=tagged_dialogues_test.dat",default="tagged_dialogues_test.dat")
     parser.add_argument('--method',help='the method name of libsvm\n0-detect the question of dialogues\n1-using pattern to predict\n2-using patterns to detect questions',default='-1')
     parser.add_argument("-q","--is_queit",help="quiet mode",action='store_true')
-    parser.add_argument("-r","--result",help="the file contains the result, it will be shared with a few processess,default=data/classifier_result.txt",default="classifier_result.txt")
+    parser.add_argument("-r","--result",help="the file contains the result, it will be shared with a few processess,default=data/classifier_result.txt",default="data/classifier_result.txt")
     args=parser.parse_args()
 
     if args.method=="0":
