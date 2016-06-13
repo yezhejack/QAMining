@@ -7,6 +7,7 @@ if __name__=="__main__":
 	#parse the arguments
     parser=argparse.ArgumentParser()
     parser.add_argument("-i","--input",help="the input file name,default=tagged_GoodQA.dat",default='tagged_GoodQA.dat')
+    parser.add_argument("-p","--ispattern")
     args=parser.parse_args()
 
     f=open(args.input,'r')
